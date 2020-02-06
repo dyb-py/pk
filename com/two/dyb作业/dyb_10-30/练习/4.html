@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #0000cc;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="点击">
+    <input type="button" value="点击">
+    <input type="button" value="点击">
+</div>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    // $('input').mousedown();
+    // $('input').mouseup();
+
+    // $('input').on({
+    //     'mousedown' : function(){
+    //         $('input').css('background-color','red');
+    //     },
+    //     'mouseup' : function(){
+    //         $('input').css('background-color','green');
+    //     }
+    // });
+
+    $('div').on('click','input',function(){
+        alert(123);
+    });
+</script>
+</body>
+</html>

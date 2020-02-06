@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h3>189班 班花</h3>
+<input type="checkbox" name="flowers" value="liuzong">刘总
+<input type="checkbox" name="flowers" value="panpan">盼盼
+<input type="checkbox" name="flowers" value="huihui">慧慧
+<input type="checkbox" name="flowers" value="qiqi">琦琦
+<input type="checkbox" name="flowers" value="xingxing">星星
+<input type="checkbox" name="flowers" value="xinxin">欣欣
+<br>
+<button onclick="allcheck();">全选</button>
+<button onclick="uncheck();">取消全选</button>
+<button onclick="revercheck();">反选</button>
+<script>
+    //
+    //获取所有的复选框
+    var checks = document.getElementsByName('flowers');
+    function allcheck() {
+        // alert(123);
+        for (var i = 0; i < checks.length; i++) {
+            checks[i].checked = true;
+        }
+    }
+
+    //取消全选
+    function uncheck() {
+        // alert(123);
+        for (var i = 0; i < checks.length; i++) {
+            checks[i].checked = false;
+        }
+    }
+
+    //反选
+    /*
+    如果原来 选中， 则 变为 false 非选中
+    如果 原来 非选中，则变为 选中 true
+     */
+    function revercheck() {
+        // alert(123);
+        for (var i = 0; i < checks.length; i++) {
+            // if (checks[i].checked === true) {
+            //     checks[i].checked = false;
+            // } else {
+            //     checks[i].checked = true;
+            // }
+            checks[i].checked = !checks[i].checked;
+        }
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

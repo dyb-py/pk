@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一页</title>
+</head>
+<body>
+<input type="button" value="跳转" onclick="jump();">
+<input type="button" value="上一页" onclick="prev_page();">
+<input type="button" value="下一页" onclick="next_page();">
+<script>
+    //
+    function jump() {
+        //
+        window.location.href = 'second.html';
+    }
+
+    //上一页
+    function prev_page() {
+        //back() 浏览器 左箭头
+        window.history.back();
+    }
+
+
+
+    function next_page() {
+        //forward() 向前 浏览器右箭头
+        window.history.forward();
+    }
+
+
+
+</script>
+</body>
+</html>

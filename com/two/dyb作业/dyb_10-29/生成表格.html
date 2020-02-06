@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 700px;
+            border-collapse: collapse;
+            text-align: center;
+            border: 1px solid black;
+        }
+        th{
+            border: 1px solid black;
+        }
+        div{display: none;}
+
+        form>table{
+            border: 0;
+            width: 300px;
+        }
+        .t1 td{
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+<table class="t1" >
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>爱好</th>
+        <th><button >添加</button></th>
+    </tr>
+</table>
+<div>
+    <form action="">
+    <table >
+        <tr>
+            <td>姓名:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>年龄:</td>
+            <td><input type="text" name="age"></td>
+        </tr>
+        <tr>
+            <td>爱好:</td>
+            <td><input type="checkbox" name="h" value="吃饭">吃饭
+                <input type="checkbox" name="h" value="睡觉">睡觉
+                <input type="checkbox" name="h" value="打豆豆">打豆豆</td>
+        </tr>
+        <tr>
+            <td>你同意条款吗?</td>
+            <td><textarea name="tiaokuan" id="" cols="30" rows="10">wadwlakdopkwapdokwpa</textarea></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="提交" name="but" ></td>
+            <td><input type="reset" value="重置"></td>
+
+        </tr>
+    </table>
+    </form>
+</div>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $('button:eq(0)').click(function () {
+        $('div').css('display','block')
+    });
+    var num=1;
+    $('[name="but"]').click(function () {
+        var tr=$('<tr></tr>>');
+        var t1=$('<td>'+num+'</td>>');
+        var t2=$('<td>'+$('[name="name"]').val()+'</td>>');
+        var t3=$('<td>'+$('[name="age"]').val()+'</td>>');
+        var a='';
+        for(var i=0;i<=2;i++){
+        if ($('[name="h"]')[i].checked) {
+            a=a+$('[name="h"]')[i].value+' '
+        }
+    }
+        var t4=$('<td>'+a+'</td>>');
+        var t5=$('<td><button onclick="f1(this);">删除</button></td>>');
+        tr.append(t1);
+        tr.append(t2);
+        tr.append(t3);
+        tr.append(t4);
+        tr.append(t5);
+        var tb=$('table:eq(0)');
+        tb.append(tr);
+        num++;
+    });
+    function f1(ele) {
+        $(ele).parent().parent().remove()
+    }
+</script>
+</body>
+</html>

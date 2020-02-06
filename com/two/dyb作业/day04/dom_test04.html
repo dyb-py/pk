@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="">
+    <input type="checkbox" name="flowers" value="liuzong">刘总
+<input type="checkbox" name="flowers" value="panpan">盼盼
+<input type="checkbox" name="flowers" value="huihui">慧慧
+<input type="checkbox" name="flowers" value="qiqi">琦琦
+<input type="checkbox" name="flowers" value="xingxing">星星
+<input type="checkbox" name="flowers" value="xinxin">欣欣
+    <input type="button" value="点击" onclick="fn();">
+</form>
+<script>
+    function fn() {
+        var flowers = document.getElementsByName('flowers');
+        console.log(flowers[1].value);
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

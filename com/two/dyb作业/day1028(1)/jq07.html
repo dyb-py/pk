@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<form action="">
+    用户名: <input type="text" name="username"><br>
+    密码: <input type="text" name="userpwd"><br>
+    性别：
+    <input type="radio" name="sex" value="男" checked="checked">男
+    <input type="radio" name="sex" value="女">女
+    <br>
+    <input type="submit">
+</form>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //属性操作
+    //attr()  设置 访问
+    // $('div').attr('id','div01');
+    // $('div').attr('class','div01');
+    //设置多个属性 id  class
+    // $('div').attr({"id":'div01','class':'div02'});
+
+    //完成 表单 属性操作
+    // $(':submit').attr('value','登录');
+
+    //访问
+    // console.log($(':submit').attr('type'));
+
+    // 单选 复选 选中
+    // $('[name="sex"]:eq(0)').attr('checked','checked');
+    // console.log($('[name="sex"]:eq(0)').attr('checked'));//checked
+
+
+    //介绍 prop() 选中 返回值 true false
+    // console.log($('[name="sex"]:eq(0)').prop('checked'));//true
+    // $('[name="sex"]:eq(0)').prop('checked',true);//true
+
+    //选中 原生js 选中 prop()  反选全选 jq版升级
+
+
+    //特殊
+    //val() 最常用   对应原生js value
+    //既可以做 设置-有参数  访问-无参
+    // $('[name="username"]').val('123');
+    // console.log($('[name="username"]').val());
+
+    //html() 对应原生js innerHTML 非表单元素
+    $('div').html('我是div文本内容<a href="jq07.html">超链接</a>');
+    console.log($('div').html());
+</script>
+</body>
+</html>

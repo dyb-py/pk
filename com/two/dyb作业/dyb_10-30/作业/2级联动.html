@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="s1" >
+    <option value="省份" selected="selected">请选择</option>
+    <option value="山西">山西</option>
+    <option value="河北">河北</option>
+    <option value="河南">河南</option>
+</select>
+<select name="s2" >
+    <option value="城市" >请选择</option>
+</select>
+<script src="jquery-1.11.1.js"></script>
+<script>
+var data=[
+    {'山西':['太原','运城','临汾']},
+    {'河北':['保定','石家庄']},
+    {'省份':['请选择']},
+    {'河南':['郑州','pp','hh','aaaaa']}
+]
+
+$('[name=s1]').click(function () {
+    for (var i=0;i<data.length;i++){
+        for (var k in data[i]){
+            if ($('[name=s1]').children(':selected').val()==k) {
+                $('[name=s2]').children().remove()
+                for (var j=0;j<data[i][k].length;j++){
+                    var op=$('<option>'+data[i][k][j]+'</option>>')
+                    $('[name=s2]').append(op)
+                }
+            }
+        }
+    }
+})
+</script>
+</body>
+</html>

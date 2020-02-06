@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style >
+        .ad {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 230px;
+            height: 120px;
+            background-image: url(01.jpg);
+            display: none;
+        }
+        .ad span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 18px;
+            background-image: url(h.jpg);
+        }
+    </style>
+</head>
+<body>
+<div class="ad">
+    <span></span>
+</div>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $('div').slideDown(3000,function () {
+        $('div').slideUp(3000,function () {
+            $('div').css('display','block')
+        })
+    })
+</script>
+</body>
+</html>

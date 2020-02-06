@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css-选择器</title>
+    <style>
+        /*给页面中所有的li设置 border 边框*/
+        /*
+        选择器：
+            - 标签选择器 通过标签名称来获取 获取到页面中所有该标签  表示方式：标签名
+            - id选择器  通过id属性值来获取标签 唯一  #id属性值
+            - 类选择器  通过class 属性值来获取标签    class属性-所有标签都有的属性   .类属性值
+                获取到页面中所有指定该class属性值的标签
+        */
+        /*li {*/
+        /*    border: 1px solid red;*/
+        /*}*/
+        /*#li02 {*/
+        /*    border: 1px solid red;*/
+        /*}*/
+        /*.li {*/
+        /*    border: 1px solid red;*/
+        /*}*/
+    /*
+        关系选择器：
+            - 后代选择器       空格   子子孙孙
+            - 子代选择器 儿子  >
+            - 并集选择器 同时获取多个标签 ,
+            - 交集选择器 div.li
+    */
+        /*ul > li {*/
+        /*    border: 1px solid red;*/
+        /*}*/
+        /*#li05,.li {*/
+        /*    border: 1px solid red;*/
+        /*}*/
+        /*.li {*/
+        /*    border: 1px solid red;*/
+
+        /*}*/
+        /*div.li {*/
+        /*     border: 1px solid red;*/
+        /*}*/
+
+    /*
+        伪类选择器
+        :focus 聚焦
+        :hover 鼠标悬停
+    */
+        /*input:focus {*/
+        /*    background-color: red;*/
+        /*}*/
+        /*input:hover {*/
+        /*    background-color: green;*/
+        /*}*/
+        * {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="text">
+<ul>
+    <li>
+        我是li
+        <ol>
+            <li>我是二级li</li>
+            <li class="li">我是二级li</li>
+            <li>我是二级li</li>
+            <li>我是二级li</li>
+        </ol>
+    </li>
+    <li id="li02" class="li">我是li</li>
+    <li>我是li</li>
+    <li class="li">我是li</li>
+    <li id="li05">我是li</li>
+    <li>我是li</li>
+</ul>
+<div class="li">我是div</div>
+<div>我是div</div>
+</body>
+</html>

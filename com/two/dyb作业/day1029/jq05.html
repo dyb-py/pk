@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="点击">
+</div>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    /*
+    事件对象
+    事件冒泡：从里到外
+        - 阻止冒泡 方法 stopPropagation() jq
+        - 阻止默认行为  preventDefault() jq
+     */
+    //事件对象
+    $('input').click(function(ev){
+        console.log(ev);//事件对象
+        alert('input');
+        ev.stopPropagation();//jq 阻止冒泡
+    });
+
+    $('div').click(function(ev){
+        console.log(ev);//事件对象
+        alert('div');
+
+    });
+</script>
+</body>
+</html>

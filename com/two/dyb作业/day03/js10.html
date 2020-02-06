@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-定时器</title>
+</head>
+<body>
+<script>
+    console.log(123);
+    console.log(456);
+    /*
+    setTimeout
+    使用语法：
+        - 参数一：匿名函数/函数名
+        - 参数二：时间 毫秒
+        - 功能：延时一定时间之后，执行函数程序
+     */
+    /*
+    setInterval()
+        - 功能：间隔一定时间，就执行一次某个函数程序。重复
+        - 使用语法 跟 setTimeout() 一致
+     */
+    // function fn (){
+    //     console.log(789);
+    // }
+    // // setTimeout(fn,2000);
+    // setInterval(fn,2000);
+
+    /*
+    打印输出 ： 我今年N岁了。
+    每隔一秒长一岁。
+    80
+     */
+    var num = 1;
+    var timer = setInterval(function(){
+        //
+
+        console.log('我今年' + num + '岁了。');
+        num++;
+        if (num === 81) {
+            alert('升天了');
+            clearInterval(timer);
+        }
+    },10);
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

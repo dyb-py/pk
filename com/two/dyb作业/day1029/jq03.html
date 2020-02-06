@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击" onclick="fn(this);">
+<input type="button" value="点击2">
+
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    /*
+    jq- 事件
+        - 事件注册两种方式
+            - 写在标签上
+            - 写在脚本当中 jq 单独封装 函数
+        - this dom对象  jq进行转换$()
+     */
+
+    function fn(ele) {
+        console.log(ele);//dom对象
+        //输出 当前按钮值
+        console.log($(ele).val());
+    }
+
+    $('input:eq(1)').click(function(){
+        console.log($(this).val());
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-内置对象 日期</title>
+</head>
+<body>
+<script>
+    var date1 = new Date();
+    console.log(date1);
+    //格式化处理
+    console.log(date1.toLocaleString());//2019/10/10 下午5:12:18
+
+    //
+    // console.log(date1.getFullYear());
+    // //getMonth() 返回值 0-11
+    // console.log(date1.getMonth() + 1);//0-11
+    // console.log(date1.getDate());//10
+    // // getDay() 返回值 0-6
+    // console.log(date1.getDay());//4
+    // console.log(date1.getHours());
+    // console.log(date1.getMinutes());
+    // console.log(date1.getSeconds());
+    // console.log(date1.getMilliseconds());
+
+ // 距离2019/10、12 18:00:00还剩多少天多少时多分多秒？
+    /*
+    1.先获取当前时间
+    2.设置截止时间
+    3.求差值
+     */
+    var date2 = new Date('2019/10/12 18:00:00');
+    console.log(date2);
+    //3.求差值
+    console.log(date2 - date1);//毫秒
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

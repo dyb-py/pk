@@ -1,0 +1,40 @@
+1、传统请求：表单、超链接、地址栏（locaion.href）都会刷新整个页面
+
+新建2个view  一个view返回一个html
+在第一个view中加一个a标签  点击跳转到第二个view
+发现 整个页面被刷新覆盖
+
+
+def index(request):
+    return render(request,"ajax_demo/index.html")
+
+
+def login(request):
+    return render(request,'ajax_demo/login.html')   # 返回整个页面
+
+
+2、返回部分内容 
+
+def login(request):
+    # return HttpResponse("abc")      # 返回部分内容  还是会刷新覆盖整个页面
+
+
+3、希望不刷新整个页面，而只是页面的一部分
+用户注册为实例
+ # return render(request,"ajax_demo/index.html")  #返回同一个注册页面 欺骗用户 但还是会刷新 所有填写的数据都没了
+
+ 一个用户注册页面  用户输入了 用户名、密码、邮箱等   
+提交给服务器 服务器验证 返回用户名重复（return 同一个注册页面）
+此时注册页面用户填写的数据全部没了
+
+4、填写完用户名 鼠标失去焦点时 把用户名发送给服务器来验证
+  function usernameblur() {
+           var name = document.getElementsByName('userName')[0].value
+            location.href = "/ajax/login/?userName="+name
+            //这种方式依然会刷新整个页面
+        }
+
+
+5、希望输入完用户名 发送请求给服务器进行校验 并且只刷新部分页面 而不是整个页面
+
+6、弹幕

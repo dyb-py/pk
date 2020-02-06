@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq-自定义动画</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 50px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击">
+<div></div>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery.color.js"></script>
+<script>
+    $('input').click(function(){
+
+        //div 做动画
+        //宽 200px  高 200px  颜色 绿色  位置  100px  100px
+        $('div').animate({
+            'width' : '200px'
+
+        },2000);
+
+         $('div').animate({
+
+            'height' : '200px',
+
+        },2000);
+
+
+          $('div').animate({
+
+            'left' : '100px',
+            'top' : '100px',
+
+        },2000);
+
+         $('div').animate({
+            'background-color' : 'green',
+            'opacity' : .5
+            // 'background-color' : 'green',
+        },2000);
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

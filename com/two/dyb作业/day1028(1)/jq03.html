@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li id="li01">我是li01</li>
+    <li class="li" id="li02">我是li02</li>
+    <li>我是li03</li>
+    <li class="li">我是li04
+    </li>
+    <li>我是li05</li>
+    <li>我是li06</li>
+</ul>
+<form action="">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="text" name="userpwd"><br>
+    性别：
+    <input type="radio" name="sex" value="male" checked="checked"> 男
+    <input type="radio" name="sex" value="female"> 女
+    <br>
+    爱好：
+    <input type="checkbox" name="hobbys" value="买衣服" checked="checked">买衣服
+    <input type="checkbox" name="hobbys" value="买键盘">买键盘
+    <input type="checkbox" name="hobbys" value="吃饺子">吃饺子
+    <input type="checkbox" name="hobbys" value="玩linux">玩linux
+</form>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //入口函数
+    $(function(){
+        //:odd odd奇数  下标为准
+        // $('li:odd').css('color','red');
+        // $('li:even').css('color','green');
+        //作业：jq实现 隔行变色 背景颜色
+
+        //
+        // $('li:first').css('color','red');
+        // $('li:last').css('color','red');
+        // //:eq(index)
+        // $('li:eq(1)').css('color','red');
+
+        // $('li:lt(3)').css('color','red');
+        // $('li:gt(3)').css('color','red');
+
+        //对页面中 input标签 进行 样式设置
+        // $('[name="username"]').css('background-color','red');
+
+        //表单选择器
+        //页面中所有选中的 单选按钮 或 复选框
+        //:selected 同上
+        // console.log($(':checked'));
+        console.log($(':checkbox'));
+    });
+</script>
+</body>
+</html>

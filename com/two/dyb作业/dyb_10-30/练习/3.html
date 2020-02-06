@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击" onclick="fn(this);">
+<input type="button" value="点击2">
+<script src="jquery-1.11.1.js"></script>
+<script>
+    function fn(ele) {
+        console.log(ele);//dom对象
+        //输出 当前按钮值
+        console.log($(ele).val());
+    }
+
+    $('input:eq(1)').click(function(){
+        console.log($(this).val());
+    });
+
+
+</script>
+</body>
+</html>

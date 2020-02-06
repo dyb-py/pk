@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击1">
+<input type="button" value="点击2">
+<input type="button" value="点击3">
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //点击页面中按钮 打印输出123
+    //1.获取标签  2.实现事件 原生js 两种书写方式
+    // jq对象 转换为 dom对象(原生js 对象)
+    // var $btn = $('input:eq(1)');
+    // console.log($btn[0]);
+    // console.log($btn.get(0));
+    // $btn.get(0).onclick = function () {
+    //     console.log(123);
+    // }
+
+
+    //2.dom对象转为jq对象
+    var btn1 = document.getElementsByTagName('input')[0];
+    //
+    $(btn1).css('background-color','red');
+
+</script>
+</body>
+</html>

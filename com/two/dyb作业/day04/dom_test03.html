@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="" alt="">
+<script>
+    /*
+    js给img设置 src 图片路径
+     */
+    //获取
+    var img = document.getElementsByTagName('img')[0];
+
+
+    //定时器
+    var num = 1;
+    setInterval(function(){
+        img.src = 'images/a' + num + '.png';
+        num++;
+        //判断
+        if (num === 5) {
+            num = 1
+        }
+    },1000)
+
+
+
+</script>
+</body>
+</html>

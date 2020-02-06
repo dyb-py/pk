@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index11</title>
+</head>
+<body>
+<ul>
+    <li>地址栏输入 命名路径</li>
+    <li>a标签</li>
+    <li>form表单</li>
+    <li>js-location.href</li>
+</ul>
+<a href="{{ url_for('index9') }}?name=liuzong&age=18">点击有惊喜！</a>
+<form action="{{ url_for('index9') }}" method="post">
+    用户名： <input type="text" name="username"><br>
+    密码： <input type="password" name="userpwd"><br>
+    爱好：
+    <input type="checkbox" name="hobbys" value="足球">足球<br>
+    <input type="checkbox" name="hobbys" value="篮球">篮球<br>
+    <input type="checkbox" name="hobbys" value="乒乓">乒乓<br>
+    <input type="submit" value="登录">
+</form>
+<button onclick="fn();">点击按钮</button>
+<script>
+    function fn() {
+        window.location.href = '{{ url_for("index9") }}?name=sunge&age=18';
+    }
+
+
+
+</script>
+</body>
+</html>

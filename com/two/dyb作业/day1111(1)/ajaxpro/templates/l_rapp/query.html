@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据查询显示</title>
+</head>
+<body>
+{% load static %}
+<h1>进行数据查询显示</h1>
+<input type="button" value="查询" onclick="fn()">
+<div id="div01" style="background-color:red;height: 100px;"></div>
+<div id="div02" style="background-color:pink;height: 100px;"></div>
+<div id="div03" style="background-color:yellow;height: 100px;"></div>
+
+<table border="1"></table>
+<script src="{% static 'jquery-1.11.1.js' %}"></script>
+<script>
+
+    //fn发送 ajax请求
+    {#$('div').load("{% url 'l_rapp:querylogic' %}");#}
+    $('#div01').load("{% url 'l_rapp:demo1' %}");
+    $('#div02').load("{% url 'l_rapp:demo2' %}");
+    $('#div03').load("{% url 'l_rapp:demo3' %}");
+    //fn 发送post请求 post()
+    function fn1(){
+        $.post(
+            "{% url 'l_rapp:querylogic' %}",
+            'name=liuzong&age=28&csrfmiddlewaretoken={{ csrf_token }}',
+            function(msg) {
+                console.log('post');
+                console.log(msg);//接收到 js对象
+            },
+            'text'
+        );
+    }
+
+    //fn 发送 get请求 get()
+    function fn1(){
+        $.get(
+            "{% url 'l_rapp:querylogic' %}",
+            'name=liuzong&age=28',
+            function(msg) {
+                console.log('get');
+                console.log(msg);//接收到 js对象
+            },
+            'text'
+        );
+    }
+
+
+    //fn 发送 post请求 jq版
+     function fn1() {
+        //配置参数工作
+         $.ajaxSetup({
+              url : "{% url 'l_rapp:querylogic' %}",
+             headers:{"X-CSRFToken":"{{ csrf_token }}"}
+         });
+        $.ajax({
+            type: 'post',
+
+            data: 'name=liuzong&age=28',
+            success: function(msg) {
+                console.log('ajax+ajaxsetup');
+                console.log(msg);//接收到 js对象
+            }
+
+    });
+
+}
+
+    //fn 发送ajax请求 jq版 get请求
+    function fn1() {
+        //
+        $.ajax({
+            type: 'get',
+            url : "{% url 'l_rapp:querylogic' %}",
+            data: 'name=liuzong&age=28',
+            success: function(msg) {
+                console.log(msg);//接收到 js对象
+            }
+
+    });
+
+
+
+
+
+
+    }
+
+
+
+    function fn1() {
+        //发送 ajax请求
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+    //初始化 配置
+    // url  查询所有的数据表 数据
+    xhr.open('get',"{% url 'l_rapp:querylogic' %}",true);
+    xhr.send();
+
+    //接收响应
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var rst = xhr.responseText; //数组
+            console.log(rst);//字符串
+            console.log(JSON.parse(rst)); //js识别 原生对象
+            {#console.log(typeof(rst),rst);  //string 字符串#}
+            {#document.getElementsByTagName('div')[0].innerHTML = rst;#}
+
+
+            //创建表格
+            //
+            {#var info = '';#}
+            {#for (var i = 0; i < rst.length; i++) {#}
+            {#    info += '<tr>';#}
+            {#    info += '<td>' + rst[i].id + '</td>';#}
+            {#    info += '<td>' + rst[i].name + '</td>';#}
+            {#    info += '<td>' + rst[i].pwd + '</td>';#}
+            {#    info += '</tr>';#}
+
+            {#document.getElementsByTagName('table')[0].innerHTML = info;#}
+
+
+            //创建表格
+            {#for (var i = 0; i < rst.length; i++) {#}
+            {#    //#}
+            {#    var tr = document.createElement('tr');#}
+            {#    //js 对象可以遍历#}
+            {#    for (var k in rst[i]) {#}
+            {#        var td = document.createElement('td');#}
+            {#        td.innerHTML = rst[i][k];#}
+            {#        tr.appendChild(td);#}
+            {#    }#}
+            {#    document.getElementsByTagName('table')[0].appendChild(tr);#}
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

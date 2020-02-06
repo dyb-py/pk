@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单注册</title>
+</head>
+<body>
+<form action="{% url 'uploadapp:formlogic' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    姓名： <input type="text" name="username"><br>
+    年龄： <input type="text" name="userage"><br>
+    生日： <input type="date" name="userdate"><br>
+    头像上传： <input type="file" name="userfile"><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

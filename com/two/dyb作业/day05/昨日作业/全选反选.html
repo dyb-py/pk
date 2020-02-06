@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		td {
+			text-align: center;
+		}
+	</style>
+	
+</head>
+<body>
+<table border="1" cellpadding="10" cellspacing="0" width="300">
+	<tr>
+		<th><input type="checkbox" id="checkAll" onclick="checkAll()"></th>
+		<th>商品名称</th>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>衣服</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>鞋子</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>t恤</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>毛衣</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<button onclick="fx()">反选</button>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+	//获取所有的tr
+	var trs = document.getElementsByTagName("tr");
+	for (var i = 0; i < trs.length; i++) {
+		if(i % 2 == 0) {
+			trs[i].style.background = "orange";
+		} else {
+			trs[i].style.background = "gray";
+		}
+	}
+
+	function fx() {
+		var checks = document.getElementsByTagName("input");
+		for (var i = 1; i < checks.length; i++) {
+			/*if(checks[i].checked) {
+				checks[i].checked = false;
+			} else {
+				checks[i].checked = true;
+			}*/
+			checks[i].checked = !checks[i].checked;
+		}
+	}
+
+	function checkAll() {
+		var ck = document.getElementById("checkAll");
+		var checks = document.getElementsByTagName("input");
+		
+		if(ck.checked == true) {//全部选中
+			for (var i = 1; i < checks.length; i++) {
+				checks[i].checked = true;
+			}
+		} else {//取消全选
+			for (var i = 1; i < checks.length; i++) {
+				checks[i].checked = false;
+			}
+		}
+	}	
+</script>

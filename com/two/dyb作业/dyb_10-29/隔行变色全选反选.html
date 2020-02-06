@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    table{
+        width: 300px;
+        height: 40px;
+        border-collapse: collapse;
+        align-content: center;
+        border: 1px solid black;
+    }
+    td{
+        border: 1px solid black;
+        }
+</style>
+<body>
+<table>
+<tr>
+    <td align="center"><input type="checkbox" name="s" value="商品" ></td>
+    <td align="center">商品名称</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="衣服"></td>
+    <td align="center">衣服</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="鞋子"></td>
+    <td align="center">鞋子</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="T恤"></td>
+    <td align="center">T恤</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="毛衣"></td>
+    <td align="center">毛衣</td>
+</tr>
+    <tr>
+        <td colspan="2" align="center"><button >反选</button></td>
+    </tr>
+
+</table>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $('tr:odd').css('background-color','red')
+    $('tr:even').css('background-color','yellow')
+    $('button').click(function () {
+        var c=$('[name="s1"]')
+        for (var i=0 ;i < 4;i++){
+            c[i].checked=!c[i].checked
+        }
+        $('[name="s"]').prop('checked',false)
+    })
+    $('[name="s"]').click(function () {
+        var c=$('[name="s1"]')
+        if($('[name="s"]')[0].checked){
+            for(var i=0;i<4;i++){
+                c[i].checked=true
+            }
+        }else {
+            for(var i=0;i<4;i++){
+                c[i].checked=false
+            }
+        }
+    })
+</script>
+</body>
+</html>

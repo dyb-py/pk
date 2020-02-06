@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body form table{
+			display: none;
+		}
+	</style>
+
+</head>
+<body>
+	<table id="t" width="600" border="1" cellpadding="5" 
+	cellspacing="0">
+		<tr>
+			<th>编号</th>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>爱好</th>
+			<th><button onclick="show()">添加</button></th>
+		</tr>
+	</table>
+	<form>
+		<table>
+			<tr>
+				<td>姓名：</td>
+				<td><input id="userName" type="text" name="userName"></td>
+			</tr>
+			<tr>
+				<td>年龄：</td>
+				<td><input id="age" type="text" name="age"></td>
+			</tr>
+			<tr>
+				<td>爱好：</td>
+				<td>
+					<input type="checkbox" name="hobby" value="吃饭">吃饭
+					<input type="checkbox" name="hobby" value="睡觉">睡觉
+					<input type="checkbox" name="hobby" value="打豆豆">打豆豆
+				</td>
+			</tr>
+			<tr>
+				<td>同意条款吗？</td>
+				<td>
+					<textarea rows="10" cols="20">
+						阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款阅读条款
+						阅读条款
+
+						阅读条款阅读条款
+					</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="button" 
+				onclick="handleData()" value="提交" ></td>
+				<td><input type="reset" 
+				 value="重置"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+<script type="text/javascript">
+	//当点击提交时，获取姓名,年龄,爱好
+	var num = 1;
+	function handleData() {
+		var userName = document.getElementById("userName").value;
+		var age = document.getElementById("age").value;
+		var hobbys = document.getElementsByName("hobby");
+		var hobby = "";
+		for(var i=0;i<hobbys.length;i++){
+			if(hobbys[i].checked === true) {
+				hobby = hobby + hobbys[i].value + " ";
+			}
+		}
+
+		//往table中添加tr
+		var tr = document.createElement("tr");
+		var noTd = document.createElement("td");
+		noTd.innerHTML = num;
+		var nameTd = document.createElement("td");
+		nameTd.innerHTML = userName;
+		var ageTd = document.createElement("td");
+		ageTd.innerHTML = age;
+		var hobbyTd = document.createElement("td");
+		hobbyTd.innerHTML = hobby;
+		var buttonTd = document.createElement("td");
+		//this代表操作对象，将button元素传递给removeNode函数
+		buttonTd.innerHTML = "<button onclick='removeNode(this)'>删除</button>";
+		//将所有的td放入tr
+		tr.appendChild(noTd);
+		tr.appendChild(nameTd);
+		tr.appendChild(ageTd);
+		tr.appendChild(hobbyTd);
+		tr.appendChild(buttonTd);
+		//将tr放入table
+		var t = document.getElementById("t");
+		t.appendChild(tr);
+		num++;
+	}
+
+	function show() {
+		var table = document.getElementsByTagName("table")[1];
+		table.style.display = "block";
+	}
+
+	function removeNode(obj) {
+		/*var table = document.getElementById("t");
+		var trs = table.getElementsByTagName("tr");
+		var index = 
+		var tr = tr*/
+		//var td = obj.parentNode;
+		var tr = obj.parentNode.parentNode;
+		var table = document.getElementById("t");
+		table.removeChild(tr);
+
+	}
+
+</script>

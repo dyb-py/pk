@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-事件</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #cccccc;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div = document.getElementsByTagName('div')[0];
+            console.log(div);
+            div.style.backgroundColor = 'red';
+        }
+
+    </script>
+</head>
+<body>
+<div></div>
+<input type="text">
+<select name="sel" id="">
+    <option value="ty">太原</option>
+    <option value="lf">临汾</option>
+    <option value="xz">忻州</option>
+    <option value="yc">运城</option>
+</select>
+<form action="">
+    <input type="text">
+    <input type="submit">
+</form>
+<script>
+    //鼠标事件：
+    // 点击  双击
+    //点击div实现 div设置背景颜色 红色
+    //事件书写方式二：
+    //1.获取标签
+    var div = document.getElementsByTagName('div')[0];
+    //2.事件书写  回调函数
+    // div.onclick = function () {
+    //     div.style.backgroundColor = 'red';
+    // }
+
+    // div.ondblclick = function () {
+    //     div.style.backgroundColor = 'green';
+    // }
+
+
+    //鼠标 移入 移除
+    div.onmouseover = function () {
+        div.style.backgroundColor = 'red';
+    }
+    //
+    div.onmouseout = function () {
+        div.style.backgroundColor = 'green';
+    }
+
+    //鼠标移动
+    div.onmousemove = function () {
+        console.log('onmousemove');
+    }
+
+    /*
+    焦点事件：
+        - onfocus 获取焦点
+        - onblur 失去焦点
+     */
+    //1.文本框获取焦点 背景颜色 红色
+    //2.文本框失去焦点 输出输入框值
+    // var txt = document.getElementsByTagName('input')[0];
+    // txt.onfocus = function () {
+    //     txt.style.backgroundColor = 'red';
+    // }
+    //
+    // txt.onblur = function () {
+    //     console.log(txt.value);
+    // }
+
+    //onchange事件 事件源：select标签
+    // var sel = document.getElementsByTagName('select')[0];
+    // sel.onchange = function () {
+    //     console.log('onchange');
+    //     //
+    //     console.log(sel.value);
+    //     console.log(sel.selectedIndex);
+    // }
+
+    // onsubmit事件 事件源 form
+    // var form1 = document.forms[0];
+    // form1.onsubmit = function(){
+    //     alert(123);
+    // }
+
+    //onload事件  页面加载事件 等到html css img 音频视频等 加载完毕之后，
+    // 再去执行的事件响应函数
+</script>
+</body>
+</html>

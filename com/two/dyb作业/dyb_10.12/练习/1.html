@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+<input type="button" value="点击" onclick="fn();">
+<script>
+
+    console.log(window);
+
+    window.alert(123);
+
+    console.log(window.confirm('您确定要删除吗？'));
+
+    function fn() {
+
+        window.location.href = '2.html';
+
+        window.location.reload();
+    }
+
+</script>
+</body>
+</html>

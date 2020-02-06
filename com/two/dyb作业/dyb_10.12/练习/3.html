@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-样式设置</title>
+
+</head>
+<body>
+<div>我是div</div>
+<ul>
+    <li>qqqqq</li>
+    <li>qqqqq</li>
+    <li>qqqqq</li>
+    <li>qqqqq</li>
+</ul>
+<script>
+    var div = document.getElementsByTagName('div')[0];
+    div.style.color = 'red';
+    div.style.backgroundColor = 'rgb(0,255,0)';
+
+    var lis = document.getElementsByTagName('li');
+    for (var i = 0; i < lis.length; i++) {
+        if (i % 2 === 0) {
+            lis[i].style.backgroundColor = 'red';
+        } else {
+            lis[i].style.backgroundColor = 'green';
+
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

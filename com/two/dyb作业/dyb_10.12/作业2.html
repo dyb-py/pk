@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+<input type="button" value="点击" onclick="f();">
+<script>
+    var num=6;
+    function fn() {
+        num--;
+        if (num===0){
+            window.location.href = '作业1.html';
+        }
+        var div = document.getElementsByTagName('div')[0];
+        div.innerHTML ='<a href="作业1.html">'+num+'秒后跳转'+'</a>'
+
+    }
+
+    function f(){
+        setInterval(fn,1000)
+    }
+
+
+</script>
+</body>
+</html>

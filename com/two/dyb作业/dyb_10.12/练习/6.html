@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="" alt="">
+<script>
+
+    var img = document.getElementsByTagName('img')[0];
+
+    var num = 1;
+    setInterval(function(){
+        img.src = 'images/a' + num + '.png';
+        num++;
+
+        if (num === 5) {
+            num = 1
+        }
+    },100)
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="点击">
+</div>
+<script>
+    //事件冒泡： 从里到外
+    //当前元素绑定点击，触发点击事件同时，还会沿着当前层级结构，
+    //逐级往上触发上一级绑定的相同事件，直到最顶层
+    //1.点击按钮
+    var btn = document.getElementsByTagName('input')[0];
+    btn.onclick = function (ev) {
+        // console.log(ev);
+        alert('btn');
+        //阻止冒泡
+        ev.stopPropagation();
+    }
+
+    //2.点击div
+    var div = document.getElementsByTagName('div')[0];
+    div.onclick = function (ev) {
+        alert('div');
+    }
+
+    //
+
+
+
+
+</script>
+</body>
+</html>

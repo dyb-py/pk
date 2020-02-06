@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+<input type="button" value="点击" onclick="fn();">
+<script>
+    //window对象
+    //对象-属性 方法
+    // console.log(window);
+
+    //alert window对象方法
+    // window.alert(123);
+    //confirm() 确认框  返回值：true/false
+    // console.log(window.confirm('您确定要删除吗？'));
+    /*
+    window对象 常用方法：
+        - confirm()
+        - setInterval()
+        - setTimeout()
+        - clearInterval()
+        - clearTimeout()
+        - alert()
+        - prompt()
+     */
+
+    // window.setInterval();
+
+    //访问 history location 属性
+    //location子对象: href属性 reload方法
+    //history 对象
+    // console.log(window.location);
+    //
+    // function fn() {
+    //     // href属性： 设置请求url路径 地址栏
+    //     // window.location.href = 'bom02.html';
+    //     //刷新页面reload()
+    //     window.location.reload();
+    //
+    //
+    // }
+
+    /*
+    history: 历史 浏览器历史访问记录
+     */
+
+
+    /*
+    总结：
+        - BOM 浏览器对象模型  js控制浏览器
+        - window对象   属性 方法构成
+            - 常用方法
+                - alert() prompt()
+                - confirm()
+                - setInterval() setTimeout()
+                - clearInterval() clearTimeout()
+            - 属性
+                - location  对象
+                    - 属性 href  设置请求url路径  模拟 导航
+                    - 方法 reload() 刷新当前页面
+                - history 对象
+                    - 方法  go(num)  back()后退  forward() 前进
+                            - 扩展： go(num)
+                                num 数字 整数
+                                >0 跳到当前页之后的第num个记录
+                                <0 调到当前页之前的第num个记录
+     */
+</script>
+</body>
+</html>

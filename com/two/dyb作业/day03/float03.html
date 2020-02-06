@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动-基础</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #cccccc;
+        }
+        /*设置浮动的元素的总宽度，一旦超出父容器宽度，一行放不在情况，只能另起一行*/
+        .div01,.div02 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .div02 {
+            background-color: green;
+        }
+        .div01 {
+            float: right;
+        }
+        .div02 {
+            float: right;
+        }
+        .div03 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div01"></div>
+    <div class="div02"></div>
+    <div class="div03"></div>
+</div>
+</body>
+</html>

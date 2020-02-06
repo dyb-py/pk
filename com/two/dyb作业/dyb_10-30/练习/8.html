@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>我是li01</li>
+    <li>我是li02</li>
+    <li>我是li03</li>
+    <li>我是li04</li>
+    <li>我是li05</li>
+</ul>
+<script src="jquery-1.11.1.js"></script>
+<script>
+$('li').css('background-color','red');
+$('li').each(function(){
+
+        console.log($(this).html());
+    });
+
+var arrColor = ['red','green','yellow','blue','pink'];
+    $('li').each(function(index,ele){
+        $(ele).css('background-color',arrColor[index]);
+    });
+</script>
+</body>
+</html>

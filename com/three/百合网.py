@@ -1,0 +1,24 @@
+import requests
+import json
+import time
+url='https://search.baihe.com/search/getUserList?userIDs='
+headers = {
+    'cookie':'accessID=20191227203159363587; channel=baidu; accessToken=BH1577449919191754647; Hm_lvt_5497f3e5cf06014777f01fb0307e58f4=1577449919; Hm_lpvt_5497f3e5cf06014777f01fb0307e58f4=1577449919; tongjiType=newlandpage; OnceLoginWEB=212714266; LoginEmail=15935117233%40mobile.baihe.com; userID=212714266; spmUserID=212714266; tempID=7924868185; orderSource=10130301; hasphoto=1; Hm_lvt_5caa30e0c191a1c525d4a6487bf45a9d=1577449937; nTalk_CACHE_DATA={uid:kf_9847_ISME9754_212714266,tid:1577450029575675}; NTKF_T2D_CLIENTID=guest1812C36C-95E8-5876-5BAC-475942082325; code=313012-00003; lastLoginDate=Sun%20Dec%2029%202019%2009%3A39%3A58%20GMT+0800%20%28%u4E2D%u56FD%u6807%u51C6%u65F6%u95F4%29; cookie_pcc=1%7C%7Cbaidu%7C%7C313012-00003%7C%7Chttps%3A//www.baidu.com/baidu.php%3Fsc.060000KKXYb9K48fSSSGrbe_KfrLwK6gP-h26pVATh4eSdEDj0YPzja-cYyCcPY02pdoFFos-v4cDyX5FP9Y6gLyBztPmSW-irKnec0VqpQYGm5W8gDotJ3zRvVnIdEZ-WGM5wVy6vae14reFjjegK3SDYHmeBEUhbrTr_iBG3Ne6mfiHSXUbdS0-x2kf3OXLhtIpdyA1RzE8iNkWWnU9g06VEjV.DY_NR2Ar5Od663rj6tovgdFwKXh61fHZf6EHfuCFWCT_iXaB17IWudF4qtUJQ3Ij7xg3phmCbYyQvTyjotQob_TpSP-XH5uuuukRojPakbotT-B6.U1Yz0ZDq_Phl1sKspynqnfKY5Uju8_t0pyYqnWcd0ATquhN8uvPCmyqxpgKvP6KdpHdBmy-bIfKspyfqnfKWpyfqn16d0AdY5HDsnH-xnH0kPdt1nj0zg1DsPW7xn1msnfKopHYs0ZFY5HcLnsK-pyfqnHfvn7tznHDsnNt1njckn7t1njf4nNt1njfLnNt1njc3ndt1njRsnfKBpHYkPHNxnHR3g1csP7tznHT0UynqnH0snNtkrjfLnWc3Pj6zg1Dsn-tknjFxn0KkTA-b5H00TyPGujYs0ZFMIA7M5H00mycqn7ts0ANzu1Ys0ZKs5H00UMus5H08nj0snj0snj00Ugws5H00uAwETjYs0ZFJ5H00uANv5gKW0AuY5H00TA6qn0KET1Ys0AFL5HDs0A4Y5H00TLCq0A71gv-bm1dsTzdWI0KGuAnqiDFK0ZwdT1YYPWc4nWRsnHfLn1R1nWf3PHmk0ZF-TgfqnHRLP1R3n1R4nHmkn0K1pyfquWf4P1c3nHbsnjDsPj9-n0KWTvYqfWDkwHDzfRD1rDmkwbR4PsK9m1Yk0ZK85H00TydY5H00Tyd15H00XMfqn0KVmdqhThqV5HKxn7tsg1Kxn0Kbmy4dmhNxTAk9Uh-bT1Ysg1KxnWc3PjnknNtznW6Yn1Dkg100TA7Ygvu_myTqn0Kbmv-b5Hf0ugwGujYvP0K9TLKWm1Ys0ZNspy4Wm1Ys0Z7VuWYs0AuWIgfqn0KGTvP_5H00XMK_Ignqn0K9uAu_myTqnfK_uhnqn0KbmvPb5fKBIjYs0AqY5H00ULFsIjYsc10Wc10Wnansc108nj0snj0sc10Wc100TNqv5H08rHIxna3sn7tsQW0sg108rj7xna3kn-tsQWnY0AN3IjYs0APzm1YYnj0sP0%26word%3D%25E7%2599%25BE%25E5%2590%2588%26ck%3D2536.1.112.358.258.359.257.1364%26shh%3Dwww.baidu.com%26us%3D2.0.1.0.1.301.0%26bc%3D110101; AuthCookie=4BFFD62B611D896E16A6B93EB16C27D8B678F2D7593314C390430834C662AA9EDA8EE8E054161C47904AF051C2A81FF4D7A6E2425F8EA858B437F9EDFEE40BE6A302542275D9611E6BFB0F813A653583; AuthMsgCookie=AD4222F3CBB85794F27FDBB73AE86F89EBEB008388F2B6A023841B3ECC9139655F335180B00B0898CB9874B2C0F46E378F85DACF6D9649A35FADFCD9D2119200E3859164C5DFBC5F2518493D5C186BCC; GCUserID=212714266; AuthCheckStatusCookie=E224112D623D7EC0DF4F400BD2B5F82014D1D3015978705726A127B203C4931405E9D878DCC812E7; Hm_lpvt_5caa30e0c191a1c525d4a6487bf45a9d=1577583687; _fmdata=RBgD02QAza%2BgUnUMCR6TYM7QfKMl42Q3Bp4EgN01570f%2BOCw7g5BuTbYd3vU4lSf3JuD6jVIGZ5S9AH8y5SyFJSYdkajCJXwc6wc9wNx0bE%3D'
+    ,'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+}
+a=111111111
+while a<210000000:
+    user = [str(i) for i in range(a,a+90)]
+    user = ','.join(user)
+    a+=90
+    res = requests.get(url+user,headers=headers)
+    rst = json.loads(res.text)
+    for i in rst['data']:
+        print(i['nickname'])
+        print(i['age'])
+        print(i['height'])
+        print(i['educationChn'])
+        print(i['marriageChn'])
+        print(i['cityChn'])
+        print('______________________________________')
+    time.sleep(1)

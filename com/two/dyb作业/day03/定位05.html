@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 282px;
+            height: 80px;
+            padding: 5px;
+            border: 1px solid #cccccc;
+            margin-top: 200px;
+            /*相对定位*/
+            position: relative;
+        }
+        /*
+        定位：
+            - 给谁做定位？innerbox
+            - 给 innerbox设置 绝对定位（还需要配合方位来确定位置），给其父元素设置相对定位 即可
+                子绝对，父相对
+              - 绝对定位：参照于 距离其最近的 有定位的父元素 做的定位，如果父元素没有定位，
+                则相对于body定位
+
+        */
+        .innerbox {
+            /*绝对定位*/
+            position: absolute;
+        /*    left right top bottom*/
+            left: 50px;
+            top: 50px;
+        }
+        .innerbox div {
+            background-color: gray;
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 3px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+        }
+
+        .div04 {
+            margin-right: 0;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+<!--    图片-->
+    <img src="img/3.png" alt="">
+<!--    序号-->
+    <div class="innerbox">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="div04">4</div>
+    </div>
+</div>
+</body>
+</html>

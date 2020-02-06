@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css-盒子模型margin</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #cccccc;
+        }
+
+        .div01,.div02 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .div02 {
+            background-color: green;
+        /*    margin 基础设置使用 同 padding*/
+        /*    margin: 10px;*/
+        /*    margin: 10px 20px;*/
+        /*    margin: 10px 20px 30px;*/
+        /*    margin: 10px 20px 30px 40px;*/
+        /*    单一方向设置*/
+        /*    margin-left: 10px;*/
+        /*    margin-right: 10px;*/
+        /*    margin-top: 10px;*/
+        /*    margin-bottom: 10px;*/
+            margin-top: 50px;
+        }
+        .div01 {
+            /*如果上下两个盒子都设置，会取较大者为两个盒子之间的间距*/
+            /*margin-bottom: 20px;*/
+        }
+        .s1 {
+            /*只需要给其中一个盒子来设置即可*/
+            margin-right: 20px;
+        }
+        .s2 {
+            /*如果左右两个盒子都设置，会取两者之和 形成 盒子之间的 间距*/
+            /*margin-left: 20px;*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="div01">
+        <span class="s1">刘锟</span>
+        <span class="s2">小琪琪</span>
+    </div>
+    <div class="div02"></div>
+</div>
+</body>
+</html>

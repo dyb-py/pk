@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询</title>
+</head>
+<body>
+{% load cache %}
+<h1>数据显示</h1>
+<table border="1" cellspacing="0">
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>工资</td>
+        <td>生日</td>
+    </tr>
+    {% cache 100 1119 %}
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.salary }}</td>
+            <td>{{ user.birthday|date:'Y-m-d' }}</td>
+        </tr>
+    {% endfor %}
+    {% endcache %}
+</table>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>显示数据</h1>
+热烈欢迎 <span style="color: yellow">{{ name }}</span> <span>年龄：{{ age }}</span>
+<div>列表： {{ list1 }} 具体元素：{{ list1.0 }} {{ list1[1] }}</div>
+<div>字典： {{ dict1 }} 键值对： {{ dict1.name }} {{ dict1['age'] }} {{ dict1.keys() }}</div>
+<div>空值： {{ other }}</div>
+<div>布尔值： {{ boo1 }}</div>
+<div>集合： {{ set1 }} 具体元素：{{ set1 }}</div>
+<div>元组： {{ tuple1 }}</div>
+<div>监听长度：{{ list1 | length }}</div>
+<div>英文小写：{{ name | lower }}</div>
+<div>英文大写：{{ name | upper }}</div>
+<div>默认值：{{ other | default('该值不存在') }}</div>
+<div>默认值：{{ other | default('该值不存在',true) }}</div>
+<div>默认值：{{ s | default('该值不存在',true) }}</div>
+<div>去除前后空格：<input type="text" value="{{ name }}"> <input type="text" value="{{ name | trim }}"></div>
+<div>日期时间：{{ time }} 格式化处理：{{ time|dateformat('%Y-%m-%d %H:%M:%S') }}</div>
+<hr>
+<div>测试器</div>
+{#{% if name1 is defined %}#}
+{#    <p>{{ name }}存在</p>#}
+{#    {% else %}#}
+{#    <p>{{ name1|default('该变量不存在') }}</p>#}
+{#{% endif %}#}
+
+{#{% if not name %}#}
+{#    <p>{{ name }}</p>#}
+{#{% else %}#}
+{#    <p>测试p标签</p>#}
+{#{% endif %}#}
+
+{#是否整除#}
+
+{#<div>列表中第一个元素{{ list1[0] }} </div>#}
+{#{% if not list1[0] is divisibleby(2) %}#}
+{#    <p>我是偶数</p>#}
+{#    {% else %}#}
+{#    <p style="color: red;">我是奇数</p>#}
+{#{% endif %}#}
+
+{#{% if list1[0] is even %}#}
+{#    <p>我是奇数</p>#}
+{#{% else %}#}
+{#    <p>我是偶数</p>#}
+{#{% endif %}#}
+
+{#判断是否为大小写#}
+{#<div>{{ name }}</div>#}
+{#{% if name|upper is lower %}#}
+{#<p>全部是大写</p>#}
+{#    {% else %}#}
+{#    <p>不全部是大写</p>#}
+{#{% endif %}#}
+<hr>
+{#<h1>运算符 比较判断</h1>#}
+{#<div>{{ list1[0] }}</div>#}
+{#<div>{{ list1[0] + 10 }}</div>#}
+{#<div>{{ list1[0] - 10 }}</div>#}
+{#<div>{{ list1[0] * 10 }}</div>#}
+{#<div>{{ list1[0] / 10 }}</div>#}
+{#<div>{{ list1[0] % 10 }}</div>#}
+{#<div>{{ list1[0] == 10 }}</div>#}
+{#<div>{{ list1[0] != 10 }}</div>#}
+{#<div>{{ list1[0] >= 10 }}</div>#}
+{#<div>{{ list1[0] <= 10 }}</div>#}
+{#<div>{{ list1[0] < 10 }}</div>#}
+{#<div>{{ list1[0] > 10 }}</div>#}
+{# <div>{{ list1[0] >= 10 and list1[0] <= 9 or list1[0] > 15 }}</div>#}
+{#<div>刘总要拼接啦{{ '哈喽' ~ name ~ '彩旗飘飘' }}</div>#}
+{#<div>刘总要拼接啦{{ name }}刘总要拼接啦</div>#}
+
+{#if标签使用#}
+{#{% if s1 %}#}
+{#<p>我是布尔值</p>#}
+{#    {% else %}#}
+{#    <p>我不是布尔值</p>#}
+{#{% endif %}#}
+
+{#循环#}
+{#索引下标 index index0 revindex0 revindex#}
+{#{% for foo in list1 %}#}
+{#    {% if loop.index0 is odd %}#}
+{#        <p style="color: red;">{{ foo }}</p>#}
+{#        {% else %}#}
+{#        <p style="color: green;">{{ foo }}</p>#}
+{#    {% endif %}#}
+{#{% endfor %}#}
+
+{#for循环字典#}
+{#{% for k,v in dict1.items() %}#}
+{#<p>{{ k }},{{ v }}</p>#}
+{#{% endfor %}#}
+
+{#range()#}
+{% for foo in range(0,10,2) %}
+    {{ foo }}
+{% endfor %}
+
+</body>
+</html>

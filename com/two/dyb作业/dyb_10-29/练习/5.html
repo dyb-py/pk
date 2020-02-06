@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    我是内容
+    <input type="text">
+</div>
+<input type="button" value="删除1">
+<input type="button" value="删除2">
+<script src="jquery-1.11.1.js"></script>
+<script>
+    var t=$('<input type="texearea">');
+    // console.log(t)
+    $('div').append(t)
+    var $a = $('<a href="">惊喜</a>');
+    // $('div').append($a)
+    // $a.appendTo($('div'))
+    // $('div').prepend($a)
+    // $a.prependTo($('div'))
+    // console.log($('input'))
+    $('input:eq(2)').click(function () {
+        $('div').remove()
+    })
+    $('input:eq(3)').click(function () {
+        $('div').empty()
+    })
+</script>
+</body>
+</html>

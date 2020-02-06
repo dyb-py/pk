@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<div>
+    我是内容
+    <input type="text">
+</div>
+<input type="button" value="删除1">
+<input type="button" value="删除2">
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    $(function(){
+        //创建元素
+        // var $input = $('<input type="text">');
+        // console.log($input);
+        //
+        // //展示在页面div内部
+        // //父节点.append(子)
+        // $('div').append($input);
+        //
+
+        //创建a标签
+        // var $a = $('<a href="javascript:void(0);">点刘总，有惊喜</a>');
+        // $('div').append($a);
+
+        //升级版
+        // $('div').append('<a href="javascript:void(0);">点刘总，发红包</a>');
+
+        //append() ---> 原生js  appendChild()
+        //子节点.appendTo(父节点)
+        // var $a = $('<a href="javascript:void(0);">点刘总，有惊喜</a>');
+        // $a.appendTo($('div'));
+        
+        // prependTo() prepend() 同上
+        // 添加到 父节点内 头部
+        // var $a = $('<a href="javascript:void(0);">点刘总，有惊喜</a>');
+        // $a.prependTo($('div'));
+
+
+        //删除按钮  remove() 删除
+        $(":button:eq(0)").click(function(){
+            $('div').remove();
+        });
+
+        //empty() 内容清空
+        $(":button:eq(1)").click(function(){
+            $('div').empty();
+        });
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

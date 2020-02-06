@@ -1,0 +1,47 @@
+-- create table shop_user (
+-- id int PRIMARY key ,
+-- username VARCHAR(20),
+-- password VARCHAR(20) not NULL UNIQUE ,
+-- name VARCHAR(20) not null UNIQUE,
+-- zip int ,
+-- address VARCHAR(50)
+-- -- )
+-- create table shop_product (
+-- product_id int PRIMARY key ,
+-- product_name VARCHAR(20) not NULL UNIQUE,
+-- price int not NULL UNIQUE ,
+-- picture_path VARCHAR(30) ,
+-- discription VARCHAR(50)
+-- )
+
+-- create table shop_order (
+-- order_id int PRIMARY KEY,
+-- ordertime datetime not NULL UNIQUE,
+-- totalprice int not NULL UNIQUE,
+-- user_id int not NULL UNIQUE,FOREIGN KEY(user_id) REFERENCES shop_user(id)
+-- )
+
+-- create table shop_orderitem(
+-- orderitem_id int PRIMARY KEY,
+-- order_id int not NULL UNIQUE,
+-- product_id int not NULL UNIQUE,
+-- count int,
+-- FOREIGN KEY(order_id) REFERENCES shop_order(order_id),
+-- FOREIGN key(product_id) REFERENCES shop_product(product_id)
+-- )
+
+-- INSERT into shop_user VALUES (1000,'luxw','123456','luxiaowei',100000,'xierqi');
+-- UPDATE shop_user set password='111111' WHERE id=1000;
+-- DELETE from shop_user WHERE id=1000;
+
+-- INSERT into shop_product VALUES (60001,'ipad',3500,'D/aaa','aa');
+-- UPDATE shop_product set price='200' WHERE product_id=60001;
+-- DELETE from shop_product WHERE product_id=60001;
+
+-- INSERT into shop_order VALUES (10001,'2019-10-10 19:51:42',5000,1000)
+-- UPDATE shop_order set totalprice=1000 WHERE order_id=10001;
+-- DELETE FROM shop_order WHERE order_id=10001;
+
+-- INSERT INTO shop_orderitem VALUES (1,10001,60001,5)
+-- UPDATE shop_orderitem SET count=4 WHERE orderitem_id=1;
+-- DELETE FROM shop_orderitem WHERE orderitem_id=1;

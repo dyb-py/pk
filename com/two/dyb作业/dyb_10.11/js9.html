@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f1() {
+        var d1=new Date()
+    // console.log(d1.toLocaleString())
+    var d2 = new Date('2019/10/12 18:00:00');
+    // console.log(d2.toLocaleString());
+    var d=Math.floor((d2-d1)/1000)
+    var day=Math.floor(d/(60*60*24))
+    var o=Math.floor((d%(60*60*24))/(60*60))
+    var f=Math.floor((d%(60*60))/60)
+    var m=Math.floor(d%60)
+    console.log('距离篮球赛还有'+day+'天'+' '+o+'小时'+' '+f+'分'+' '+m+'秒');
+        // alert('距离篮球赛还有'+day+'天'+' '+o+'小时'+' '+f+'分'+' '+m+'秒')
+    }
+    setInterval(f1,1000)
+</script>
+</body>
+</html>

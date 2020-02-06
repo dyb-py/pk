@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+行数：<input type="text">
+列数：<input type="text">
+<input type="button" value="生成表格" onclick="fn();">
+<script>
+    function fn() {
+        //获取两个框 value值
+        var row = document.getElementsByTagName('input')[0].value;
+        var col = document.getElementsByTagName('input')[1].value;
+
+        //创建表格
+        //table tr td
+        //创建table
+        var table = document.createElement('table');
+        table.border = '1';
+        //创建tr
+        for (var i = 0; i < row; i++) {
+            var tr = document.createElement('tr');
+            //创建td
+            for (var j = 0; j < col; j++) {
+                var td = document.createElement('td');
+                td.innerHTML = '刘总';
+                //添加到 tr
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        document.body.appendChild(table);
+    }
+</script>
+</body>
+</html>

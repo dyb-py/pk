@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load static %}
+<div style="background-color:red; height: 30px;">我是base html文件中 头部内容</div>
+{##}
+{#<img src="/static/requestapp/img/3.png" alt="">#}
+{#<script src="/static/requestapp/js/jquery-1.11.1.js"></script>#}
+
+{#使用软编码 加载 静态资源#}
+<img src="{% static '/requestapp/img/3.png' %}" alt="">
+{#定义一个block块#}
+{% block content1 %}
+    <div style="height: 100px;">我是base html文件中的 内容部分</div>
+{% endblock %}
+
+{% block content2 %}
+    <div style="height: 30px">我是base html文件中 内容中第二部分</div>
+{% endblock %}
+<div style="background-color:green; height: 30px;">我是base html文件中 底部内容</div>
+</body>
+</html>

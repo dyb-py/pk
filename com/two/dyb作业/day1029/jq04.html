@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #0000cc;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="点击">
+</div>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //1.鼠标按下在 当前按钮上，背景 红色
+    //2.鼠标弹起 在 当前按钮上，背景 绿色
+    // $('input').mousedown();
+    // $('input').mouseup();
+
+    //事件 绑定方法
+    //bind() delegate() on()
+    //on() 可以给标签 同时绑定多个事件 键值对
+    $('input').on({
+        'mousedown' : function(){
+            $('input').css('background-color','red');
+        },
+        'mouseup' : function(){
+            $('input').css('background-color','green');
+        }
+    });
+    //
+    //点击页面按钮 弹出123
+    $('div').on('click','input',function(){
+        alert(123);
+    });
+
+
+</script>
+</body>
+</html>

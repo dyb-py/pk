@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            background-color: #F0F0F2;
+        }
+        img{
+            cursor: pointer;
+        }
+        .inbox1{
+            background: none;
+            height: 45px;
+            background-color: #222325;
+            color: gainsboro;
+        }
+        .s1{
+            margin-left: 50px;
+            cursor: pointer;
+            line-height: 45px;
+        }
+        .b2{
+            background-color: #cccccc;
+            height: 90px;
+            line-height: 90px;
+        }
+        .b3{
+            margin: auto;
+            width: 1220px;height: 490px;
+            /*margin-left: 335px;*/
+            /*margin-top: 30px;*/
+        }
+        .b4{
+            width: 305px;
+            float: left;
+        }
+        .b5{
+            width: 1220px;height: 980px;
+            /*margin-left: 335px;*/
+            margin: auto;
+        }
+        .b6{
+            width: 305px;
+            float: left;
+        }
+        .b7{
+            background-color: #F0F0F2;
+            position: absolute;
+            top: 143px;
+        }
+        .b8{
+            text-align: center;
+            /*position: absolute;*/
+            /*top: 400px;*/
+        }
+        li{
+            list-style-type: none;
+            cursor: pointer;
+        }
+        a{
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 2px;
+        }
+        #inbox1{
+            width: 1220px;
+            height: 367px;
+            margin: auto;
+            background-color: mintcream ;
+        }
+        .inbox1_in{
+            width: 303px;
+            height: 303px;
+            float: left;
+            border: 1px solid gainsboro;
+        }
+        .inbox1_in1{
+            margin: 28px;
+            padding-bottom: 23px;
+            background-color:mintcream ;
+        }
+        img{
+            border: 0;
+            border-style: none;
+        }
+        p{
+            font-size: 2px;
+        }
+        .inbox2{
+            margin-top: 30px;
+            background-color: floralwhite;
+        }
+        .inbox2_in{
+            width: 1220px;
+            height: 354px;
+            margin: auto;
+        }
+        .inbox2_in1{
+            height: 108px;
+            padding: 60px 0 55px;
+            background-color: floralwhite;
+            border-bottom:1px solid gainsboro;
+        }
+        .inbox2_in2{
+            height: 130px;
+        }
+        .ul1{
+            list-style: none;
+        }
+        .li1{
+            margin-right: 90px;
+            line-height: 1;
+            float: left;
+            list-style: none;
+        }
+        .inbox1 li{
+            display: inline;
+            margin-left:50px ;
+            line-height: 45px;
+        }
+    </style>
+</head>
+<body>
+<div class="b1">
+    <div class="inbox1" style="text-align: center">
+        <img src="1.png" alt="" style="margin-left: 10px;margin-top: 10px;float: left">
+        <ul>
+            <li><a href="">在线商城</a></li>
+            <li><a href="">坚果Pro2s</a></li>
+            <li><a href="">坚果R1</a></li>
+            <li><a href="">坚果TNT工作站</a></li>
+            <li><a href="">应用</a></li>
+            <li><a href="">论坛</a></li>
+            <li><a href="">论坛</a></li>
+            <li><a href="">荣誉奖项</a></li>
+            <li><a href="">坚果Pro2s</a></li>
+            <li><a href="">坚果Pro2s</a></li>
+        </ul>
+    </div>
+    <div class="b2" style="text-align: center">
+        <span style="padding: 0;margin: 0;margin-left: 100px;cursor: pointer;">首页</span>
+        <span class="s1" onmouseover="f1();">手机</span>
+        <span class="s1" onmouseover="f2();" >官方配件</span>
+        <span class="s1" onmouseover="f3();" >服饰箱包</span>
+        <span class="s1" onmouseover="f4();" >畅呼吸</span>
+        <span class="s1" onmouseover="f5();" >基因检测</span>
+        <span class="s1" onmouseover="f6();" >服务</span>
+        <span><img src="6.png" alt="" style="margin-left: 30px;margin-top: 10px;cursor: pointer;"></span>
+    </div>
+    <div class="b7" onmouseout="f11()"><img id="img" src="" alt=""></div>
+    <div class="b8" >
+        <img id='i' src="img/1.png" alt="" >
+    </div>
+    <div >
+        <div class="b3">
+        <h3 style=" background-color: #cccccc;"> 热门商品</h3>
+            <div class="b4"><img id='i2' class="im" src="2.png" alt=""><div class="d" style="text-align: center">￥199</div></div>
+            <div class="b4"><img id='i3' class="im" src="3.png" alt=""><div class="d1" style="text-align: center">￥149元</div></div>
+            <div class="b4"><img id='i4' class="im" src="4.png" alt=""><div class="d2" style="text-align: center">￥49元</div></div>
+            <div class="b4"><img id='i5' class="im" src="5.png" alt=""><div class="d3" style="text-align: center">￥99元</div></div>
+        </div>
+    </div>
+    <div >
+        <div class="b5">
+        <h3 style=" background-color: #cccccc;"> 服饰专场</h3>
+            <div class="b6" style="width: 610px"><img src="7.png" alt=""></div>
+            <div class="b6"><img  class="i" src="8.png" alt=""><div class="dd" style="text-align:center;height:80px;line-height: 80px ">￥199</div></div>
+            <div class="b6"><img class="i" src="9.png" alt=""><div class="dd1" style="text-align:center ;height:80px;line-height: 80px">￥199</div></div>
+            <div class="b6"><img class="i" src="10.png" alt=""><div class="dd2" style="text-align:center;height:80px;line-height: 80px ">￥199</div></div>
+            <div class="b6"><img class="i" src="11.png" alt=""><div class="dd3" style="text-align:center;height:80px ;line-height: 80px">￥199</div></div>
+            <div class="b6"><img class="i" src="8.png" alt=""><div class="dd4" style="text-align:center;height:80px ;line-height: 80px">￥199</div></div>
+            <div class="b6"><img class="i" src="9.png" alt=""><div class="dd5" style="text-align:center;height:80px ;line-height: 80px">￥199</div></div>
+        </div>
+    </div>
+    <div >
+        <div id="inbox1">
+            <div style="height: 61px;line-height: 61px; border: 1px solid gainsboro">
+                <span style="margin-left: 30px">论坛精选</span>
+                <button style="float: right;margin-right:30px;margin-top: 18px;">前往论坛 -></button>
+            </div>
+            <div class="inbox1_in">
+                <div class="inbox1_in1">
+                    <img src="img1/1.png" alt="">
+                    <h5>坚果Pro2s内敛骚蓝</h5>
+                    <p >内敛骚蓝，惊艳炫光</p>
+                    <a href="" >阅读全文-></a>
+                </div>
+            </div>
+            <div class="inbox1_in">
+                <div class="inbox1_in1">
+                    <img src="img1/2.png" alt="">
+                    <h5>坚果Pro2s惊艳开箱</h5>
+                    <p >内敛骚蓝，惊艳炫光</p>
+                    <a href="" >阅读全文-></a>
+                </div>
+            </div>
+            <div class="inbox1_in">
+                <div class="inbox1_in1">
+                    <img src="img1/3.png" alt="">
+                    <h5>坚果Pro2s团赏</h5>
+                    <p >内敛骚蓝，惊艳炫光</p>
+                    <a href="" >阅读全文-></a>
+                </div>
+            </div>
+            <div class="inbox1_in">
+                <div class="inbox1_in1">
+                    <img src="img1/4.png" alt="">
+                    <h5>八月优秀作品鉴赏</h5>
+                    <p >内敛骚蓝，惊艳炫光</p>
+                    <a href="" >阅读全文-></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inbox2">
+        <div class="inbox2_in">
+        <div class="inbox2_in1">
+            <ul class="ul1">
+                <li class="li1"><h3>订单服务</h3>
+                <ul style="padding-left: 0">
+                    <li>购买指南</li>
+                    <li>送货政策</li>
+                </ul>
+                </li>
+                <li class="li1"><h3>服务支持</h3>
+                <ul style="padding-left: 0">
+                    <li>自动复位</li>
+                    <li>使用帮助</li>
+                    <li>维修门店</li>
+                </ul>
+                </li>
+                <li class="li1"><h3>媒体中心</h3>
+                <ul style="padding-left: 0">
+                    <li>新闻动态</li>
+                    <li>送货政策</li>
+                    <li>送货政策</li>
+                </ul>
+                </li>
+                <li class="li1"><h3>关注我们</h3>
+                <ul style="padding-left: 0">
+                    <li>新浪微博</li>
+                    <li>送货政策</li>
+                    <li>送货政策</li>
+                </ul>
+                </li>
+            </ul>
+            <div style="float: right">
+                <div><h3>4000-1111</h3><p>联系我们</p></div>
+                <button >在线帮助</button>
+            </div>
+        </div>
+        <div class="inbox2_in2">
+        <div style="margin-top: 50px">Copyright © 2019 smartisan.com 版权所有</div>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    var img = document.getElementById('i');
+    var num = 2;
+    setInterval(function(){
+        img.src = 'img/' + num + '.png';
+        num++;
+        //判断
+        if (num === 3) {
+            num = 1
+            }
+        },3000);
+    var img2 = document.getElementById('i2');
+    var num2 = 3;
+    setInterval(function(){
+        img2.src = num2 + '.png';
+        num2++;
+        //判断
+        if (num2 === 6) {
+            num2 = 2
+            }
+        },3000);
+    var img3 = document.getElementById('i3');
+    var num3 = 4;
+    setInterval(function(){
+        img3.src =  num3 + '.png';
+        num3++;
+        //判断
+        if (num3 === 6) {
+            num3 = 2
+            }
+        },3000);
+    var img4 = document.getElementById('i4');
+    var num4 = 5;
+    setInterval(function(){
+        img4.src = num4 + '.png';
+        num4++;
+        //判断
+        if (num4 === 6) {
+            num4 = 2
+            }
+        },3000);
+    var img5 = document.getElementById('i5');
+    var num5 = 2;
+    setInterval(function(){
+        img5.src = num5 + '.png';
+        num5++;
+        //判断
+        if (num5 === 6) {
+            num5 = 2
+            }
+        },3000);
+    var im=document.getElementsByClassName('im')[0];
+    var d=document.getElementsByClassName('d')[0];
+    im.onmouseover =function () {
+        d.innerHTML='查看详情'
+        
+    };
+    im.onmouseout =function () {
+        d.innerHTML='￥199'
+
+    };
+    var im1=document.getElementsByClassName('im')[1];
+    var d1=document.getElementsByClassName('d1')[0];
+    im1.onmouseover =function () {
+        d1.innerHTML='查看详情'
+
+    };
+    im1.onmouseout =function () {
+        d1.innerHTML='￥149'
+
+    };
+    var im2=document.getElementsByClassName('im')[2];
+    var d2=document.getElementsByClassName('d2')[0];
+    im2.onmouseover =function () {
+        d2.innerHTML='查看详情'
+
+    };
+    im2.onmouseout =function () {
+        d2.innerHTML='￥49'
+
+    };
+    var im3=document.getElementsByClassName('im')[3];
+    var d3=document.getElementsByClassName('d3')[0];
+    im3.onmouseover =function () {
+        d3.innerHTML='查看详情'
+
+    };
+    im3.onmouseout =function () {
+        d3.innerHTML='￥99'
+
+    };
+    var i1=document.getElementsByClassName('i')[0];
+    var dd=document.getElementsByClassName('dd')[0];
+    i1.onmouseover =function () {
+        dd.innerHTML='查看详情'
+
+    };
+    i1.onmouseout =function () {
+        dd.innerHTML='￥199'
+
+    };
+    var i2=document.getElementsByClassName('i')[1];
+    var dd1=document.getElementsByClassName('dd1')[0];
+    i2.onmouseover =function () {
+        dd1.innerHTML='查看详情'
+
+    };
+    i2.onmouseout =function () {
+        dd1.innerHTML='￥199'
+
+    };
+    var i3=document.getElementsByClassName('i')[2];
+    var dd2=document.getElementsByClassName('dd2')[0];
+    i3.onmouseover =function () {
+        dd2.innerHTML='查看详情'
+
+    };
+    i3.onmouseout =function () {
+        dd2.innerHTML='￥199'
+
+    };
+    var i4=document.getElementsByClassName('i')[3];
+    var dd3=document.getElementsByClassName('dd3')[0];
+    i4.onmouseover =function () {
+        dd3.innerHTML='查看详情'
+
+    };
+    i4.onmouseout =function () {
+        dd3.innerHTML='￥199'
+
+    };
+    var i5=document.getElementsByClassName('i')[4];
+    var dd4=document.getElementsByClassName('dd4')[0];
+    i5.onmouseover =function () {
+        dd4.innerHTML='查看详情'
+
+    };
+    i5.onmouseout =function () {
+        dd4.innerHTML='￥199'
+
+    };
+    var i6=document.getElementsByClassName('i')[5];
+    var dd5=document.getElementsByClassName('dd5')[0];
+    i6.onmouseover =function () {
+        dd5.innerHTML='查看详情'
+
+    };
+    i6.onmouseout =function () {
+        dd5.innerHTML='￥199'
+
+    };
+    function f1(){
+        var img=document.getElementById('img');
+        img.src='12.png'
+    }
+    function f11(){
+        var img=document.getElementById('img');
+        img.src=''
+    }
+    function f2(){
+        var img=document.getElementById('img');
+        img.src='13.png'
+    }
+
+    function f3(){
+        var img=document.getElementById('img');
+        img.src='14.png'
+    }
+
+    function f4(){
+        var img=document.getElementById('img');
+        img.src='15.png'
+    }
+
+    function f5(){
+        var img=document.getElementById('img');
+        img.src='16.png'
+    }
+
+    function f6(){
+        var img=document.getElementById('img');
+        img.src='17.png'
+    }
+
+</script>
+</body>
+</html>

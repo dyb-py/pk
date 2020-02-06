@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom-获取元素节点</title>
+</head>
+<body>
+<ul>
+    <li id="li01">我是li</li>
+    <li>我是li</li>
+    <li class="li">我是li</li>
+    <li>我是li</li>
+    <li class="li">我是li</li>
+    <li>我是li</li>
+</ul>
+<form action="">
+    用户名： <input type="text" name="username"><br>
+    密码： <input type="password" name="userpwd"><br>
+    <input type="checkbox" name="hobby">
+    <input type="checkbox" name="hobby">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="submit" value="登录">
+</form>
+<script>
+
+    //1.通过id获取
+    var li01 = document.getElementById('li01');
+    console.log(li01);
+
+    //2.通过tagName  伪数组
+    var lis = document.getElementsByTagName('li');
+    console.log(lis[0]);
+
+    //3. 通过name属性值 获取  伪数组
+    var rst = document.getElementsByName('username');
+    console.log(rst[0]);
+
+
+    //4.通过className类名 获取
+    var lis = document.getElementsByClassName('li');
+    console.log(lis);
+
+
+    //5.获取 form表单
+    console.log(document.getElementsByTagName('form'));
+    console.log(document.forms[0]);
+
+    //6.获取 body
+    console.log(document.body);
+
+    //1.parentNode
+    var li01 = document.getElementById('li01');
+    console.log(li01.parentNode.parentNode);
+
+    //2.childNodes 所有子节点（不仅元素节点，文本节点）
+    var ul = document.getElementsByTagName('ul')[0];
+    console.log(ul.childNodes);
+
+    console.log(ul.children);
+
+</script>
+</body>
+</html>

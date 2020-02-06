@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件类型</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid orangered;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //div 鼠标按下 背景-红色；鼠标弹起 背景-绿色
+    //对接 原生js 事件方式二
+    // click() mousedown()
+    //事件三要素：事件源 事件 事件响应函数
+    // $('div').mousedown(function(){
+    //     $('div').css('background-color','red');
+    // });
+    //
+    // $('div').mouseup(function(){
+    //     $('div').css('background-color','green');
+    // });
+
+
+    //hover()
+    //  $('div').mouseover(function(){
+    //     $('div').css('background-color','red');
+    // });
+
+    // $('div').mouseout(function(){
+    //     $('div').css('background-color','green');
+    // });
+    //
+    $('div').hover(function(){
+        $('div').css('background-color','red');
+    },function(){
+        $('div').css('background-color','green');
+    });
+</script>
+</body>
+</html>

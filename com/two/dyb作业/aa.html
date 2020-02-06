@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*table{*/
+        /*    border: 1px solid black;*/
+        /*    cellspacing :"0"  ;*/
+        /*    align:"center" ;*/
+        /*    valign:"middle"*/
+        /*}*/
+    </style>
+</head>
+<body>
+<input type="button" value="点击">
+<table width="800" border="1" cellpadding="5"
+	cellspacing="0" align="center" valign="middle" >
+    <tr>
+        <th>标题</th>
+        <th>地址</th>
+        <th>说明</th>
+    </tr>
+</table>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    var data = [{
+            name: "百知教育",
+            url: "http://www.baizhi.cn",
+            type: "IT最强培训机构"
+        },{
+            name: "henan",
+            url: "http://www.baizhi.com",
+            type: "大学生IT培训机构"
+        },{
+            name: "shenzhen",
+            url: "http://web.cn",
+            type: "前端的黄埔军校"
+        }];
+    $(':button').click(function () {
+        for(var i=0 ; i<data.length; i++){
+            var tr=$('<tr></tr>');
+            for (var k in data[i]){
+                var td=$('<td>'+data[i][k]+'</td>>')
+                td.appendTo(tr)
+            }
+            $('table').append(tr)
+        }
+
+    })
+</script>
+</body>
+</html>

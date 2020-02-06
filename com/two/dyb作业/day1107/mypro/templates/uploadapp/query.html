@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>query</title>
+</head>
+<body>
+{% load static %}
+<h1>显示所有用户信息</h1>
+
+
+<table border="1">
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>生日</td>
+        <td>头像</td>
+    </tr>
+    {% for user in page.object_list %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.birthday }}</td>
+            <td>
+                <img src="{% static user.headpic.url %}" alt="" style="width: 100px">
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+{#上一页#}
+{% if page.has_previous %}
+    <a href="{% url 'uploadapp:query' %}?page={{ page.previous_page_number }}">上一页</a>
+{% endif %}
+
+{#{{ page.paginator.page_range }}#}
+{% for foo in page.paginator.page_range %}
+    <a href="{% url 'uploadapp:query' %}?page={{ foo }}">
+        {% if page.number == foo %}
+            <span style="background-color:red;">{{ foo }}</span>
+        {% else %}
+            <span>{{ foo }}</span>
+        {% endif %}
+
+    </a>
+{#    如果 当前 用户 点击的 数字 要实现 样式设置 #}
+{#    判断     点击数字样式设置 其他不需要#}
+{% endfor %}
+
+
+{#下一页#}
+{% if page.has_next %}
+    <a href="{% url 'uploadapp:query' %}?page={{ page.next_page_number }}">下一页</a>
+{% endif %}
+
+
+
+{#<table border="1">#}
+{#    <tr>#}
+{#        <td>编号</td>#}
+{#        <td>姓名</td>#}
+{#        <td>年龄</td>#}
+{#        <td>生日</td>#}
+{#        <td>头像</td>#}
+{#    </tr>#}
+{#    {% for user in users %}#}
+{#        <tr>#}
+{#            <td>{{ user.id }}</td>#}
+{#            <td>{{ user.name }}</td>#}
+{#            <td>{{ user.age }}</td>#}
+{#            <td>{{ user.birthday }}</td>#}
+{#            <td>#}
+{#                <img src="{% static user.headpic.url %}" alt="" style="width: 100px">#}
+{#            </td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{##}
+{#</table>#}
+</body>
+</html>

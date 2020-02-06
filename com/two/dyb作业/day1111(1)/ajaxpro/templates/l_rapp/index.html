@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{#接收后端 数据#}
+{#{{ users }}#}
+<table border="1" cellspacing="0">
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>密码</td>
+    </tr>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.pwd }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

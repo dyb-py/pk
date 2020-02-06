@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<a href="javascript:void(0)">点击获取验证码</a>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    var ch='abcdefghigklmnABCDEFGHIJKLMN1234567890';
+    ch.charAt(Math.floor(Math.random()*38));
+    $('a').click(function () {
+        $('div>span').each(function () {
+            var a1=Math.floor(Math.random()*255);
+            var a2=Math.floor(Math.random()*255);
+            var a3=Math.floor(Math.random()*255);
+            $(this).html(ch.charAt(Math.floor(Math.random()*38)))
+                .css('color','rgb('+a1+','+a2+','+a3+')')
+        })
+    })
+</script>
+</body>
+</html>

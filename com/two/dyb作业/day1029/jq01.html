@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<input type="button" value="点击" onclick="fn(this)">
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //点击页面中 按钮 弹出123
+    function fn(e) {
+        // alert(123);
+        //输出 当前按钮 值
+        console.log(e)
+        console.log($('input').val());
+    }
+
+    //jq事件书写方式二： 原生js-多种事件类型 鼠标事件 焦点事件 键盘事件 表单提交
+    //jq 基于原生js事件类型，去掉on，单独封装成了方法
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

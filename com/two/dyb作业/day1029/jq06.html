@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq-动画</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="show()">
+<input type="button" value="hide()">
+<input type="button" value="Toggle()">
+<input type="button" value="slideDown()">
+<input type="button" value="slideUp()">
+<input type="button" value="slideToggle()">
+<input type="button" value="fadeIn()">
+<input type="button" value="fadeOut()">
+<input type="button" value="fadeToggle()">
+<input type="button" value="fadeTo()">
+<div></div>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    /*
+    jq-动画
+        - 三组
+        - 显示隐藏
+        - 参数一： 时间 单位 毫秒  秒 1s = 1000ms
+        - 参数二：回调函数
+        - 三组动画函数使用方式相同
+     */
+    //1.点击第一个按钮
+    $('input:first').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').show(3000,function(){
+            // alert('停止了');
+            $('div').hide(2000);
+        });
+    });
+
+
+    //2.
+    $('input:eq(1)').click(function(){
+        //div隐藏
+        // $('div').css('display','none');
+        $('div').hide(3000,function(){
+            alert('停止了');
+        });
+    });
+    //toggle 切换 显示 隐藏
+    $('input:eq(2)').click(function(){
+
+        //div显示
+        // $('div').css('display','block');
+        $('div').toggle(3000,function(){
+            alert('停止了');
+        });
+    });
+
+    //2.
+    $('input:eq(3)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').slideDown(3000,function(){
+            alert('停止了');
+        });
+    });
+
+
+    $('input:eq(4)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').slideUp(3000,function(){
+            alert('停止了');
+        });
+    });
+
+    $('input:eq(5)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').slideToggle(3000,function(){
+            alert('停止了');
+        });
+    });
+
+    //
+    $('input:eq(6)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').fadeIn(3000,function(){
+            alert('停止了');
+        });
+    });
+
+
+    $('input:eq(7)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').fadeOut(5000,function(){
+            alert('停止了');
+        });
+    });
+
+    $('input:eq(8)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').fadeToggle(5000,function(){
+            alert('停止了');
+        });
+    });
+    // rgb()  rgba()
+    $('input:eq(9)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').fadeTo(3000,.5,function(){
+            alert('停止了');
+        });
+    });
+</script>
+</body>
+</html>

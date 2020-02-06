@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+<input type="button" value="show()">
+<input type="button" value="hide()">
+<input type="button" value="Toggle()">
+<input type="button" value="slideDown()">
+<input type="button" value="slideUp()">
+<input type="button" value="slideToggle()">
+<input type="button" value="fadeIn()">
+<input type="button" value="fadeOut()">
+<input type="button" value="fadeToggle()">
+<input type="button" value="fadeTo()">
+<div></div>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $('input:first').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').show(3000,function(){
+            // alert('停止了');
+            $('div').hide(2000);
+        });
+    });
+    $('input:eq(2)').click(function(){
+
+        //div显示
+        // $('div').css('display','block');
+        $('div').toggle(3000,function(){
+            alert('停止了');
+        });
+    })
+    $('input:eq(3)').click(function () {
+        $('div').slideDown(3000,function () {
+            alert('停止了');
+        })
+    })
+    $('input:eq(4)').click(function () {
+        $('div').slideUp(3000,function () {
+            alert('停止了');
+        })
+    })
+    $('input:eq(8)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').fadeToggle(5000,function(){
+            alert('停止了');
+        });
+    });
+    $('input:eq(9)').click(function(){
+        //div显示
+        // $('div').css('display','block');
+        $('div').fadeTo(3000,.5,function(){
+            alert('停止了');
+        });
+    });
+</script>
+</body>
+</html>

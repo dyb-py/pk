@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid orangered;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<input type="button" value="点击" onclick="fn(this,event)">
+<script src="jquery-1.11.1.js"></script>
+<script>
+function fn(e,event) {
+        // alert(123);
+        //输出 当前按钮 值
+        console.log(e);
+        console.log(event)
+        console.log($('input').val());
+    }
+</script>
+</body>
+</html>

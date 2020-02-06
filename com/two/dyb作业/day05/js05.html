@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="js01.html">
+    用户名:<input type="text" name="username"><br>
+    密码：<input type="password" name="userpwd"><br>
+    <input type=button" value="登录">
+</form>
+<script>
+    /*
+    1.点击登录按钮，提交表单
+     */
+   var btn = document.getElementsByTagName('input')[2];
+
+   btn.onclick = function () {
+       //做验证
+       var username = document.getElementsByName('username')[0];
+        var userpwd = document.getElementsByName('userpwd')[0];
+        if (username.value === '' || userpwd.value === '') {
+            alert('不允许为空');
+            return false;
+        }
+            //如何提交走？
+       document.forms[0].submit();
+
+   }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

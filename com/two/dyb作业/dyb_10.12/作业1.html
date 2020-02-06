@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .s{
+            display: none;
+        }
+        div{
+            float: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div >
+<input type="text" value="1">
+</div>
+<div>
+<input type="button" value="+" onclick="addfn();">
+    </div>
+<div class="s">
+<input   type="button" name='s' value="-" onclick="subfn();">
+</div>
+<script>
+    function addfn() {
+        var txt = document.getElementsByTagName('input')[0];
+        var val = txt.value;
+        console.log(typeof(val));
+        val++;
+        txt.value = val;
+        if (val>1){
+            var s=document.getElementsByTagName('div')[2];
+            s.style.display='block'
+        }
+    }
+    function subfn() {
+        var txt = document.getElementsByTagName('input')[0];
+        var val = txt.value;
+        if (val>2){
+            val--;
+            txt.value=val;
+        } else {
+            val--;
+            txt.value=val;
+            var s=document.getElementsByTagName('div')[2]
+            s.style.display='none'
+        }
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

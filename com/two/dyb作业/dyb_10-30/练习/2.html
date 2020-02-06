@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid orangered;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    // $('div').mousedown(function(){
+    //     $('div').css('background-color','red');
+    // });
+    //
+    // $('div').mouseup(function(){
+    //     $('div').css('background-color','green');
+    // });
+
+    // $('div').mouseover(function(){
+    //     $('div').css('background-color','red');
+    // });
+    //
+    // $('div').mouseout(function(){
+    //     $('div').css('background-color','green');
+    // });
+    $('div').hover(function(){
+        $('div').css('background-color','red');
+    },function(){
+        $('div').css('background-color','green');
+    });
+
+</script>
+</body>
+</html>

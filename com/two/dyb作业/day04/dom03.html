@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-样式设置</title>
+
+</head>
+<body>
+<div>我是div</div>
+<ul>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+    <li>路总马上要入手第二台电脑啦！</li>
+</ul>
+<script>
+    /*
+    js操作 div 设置样式
+     */
+    var div = document.getElementsByTagName('div')[0];
+    //设置
+    div.style.color = 'red';
+    //注意：background-color 去掉- 转 驼峰命名
+    div.style.backgroundColor = 'rgb(0,255,0)';
+
+
+    /*
+    获取所有li
+     */
+    var lis = document.getElementsByTagName('li');
+    for (var i = 0; i < lis.length; i++) {
+        if (i % 2 === 0) {
+            lis[i].style.backgroundColor = 'red';
+        } else {
+            lis[i].style.backgroundColor = 'green';
+
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码验证</title>
+</head>
+<body>
+<form action="{% url 'captchapp:check' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="captcha">
+    <img src="{% url 'captchapp:getcaptcha' %}" alt="" style="width: 100px;">
+    <a href="javascript:void(0);" onclick="fn();">看不清，换一张</a>
+    <input type="submit" value="提交">
+</form>
+<script>
+    function fn() {
+    {#    点击a标签，更换一张图片。js操作 img标签  src属性 操作路径 换一张图片#}
+        alert(123);
+        var img = document.getElementsByTagName('img')[0];
+        var url = "{% url 'captchapp:getcaptcha' %}?" + new Date().getTime();
+        img.src = url;
+    }
+</script>
+</body>
+</html>

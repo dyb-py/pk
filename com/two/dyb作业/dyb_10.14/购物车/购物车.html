@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            text-align: center;
+        }
+        input:hover{
+            color: red;
+            cursor: hand;
+        }
+        input{
+            cursor: pointer;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<table  width="800" border="1" cellpadding="5"
+	cellspacing="0"  align="center" valign="middle" >
+		<tr bgcolor="#add8e6">
+            <th><input type="checkbox" name="c1" onclick="ch();">全选</th>
+			<th>商品</th>
+			<th>单价</th>
+			<th>数量</th>
+			<th width="100">小计</th>
+			<th>操作</th>
+        </tr>
+    <tr >
+        <td><input type="checkbox" name="c" onclick="number()"></td>
+        <td><img src="img/1.jpg" alt="" width="80" height="80">卡西欧EX-TR001</td>
+        <td>5999.5</td>
+        <td><input type="button" value="-" onclick="subfn1();"><input name='a1'type="text" value="1" style="width: 20px;text-align: center;" disabled><input  type="button" name='s' value="+" onclick="addfn1();"></td>
+        <td class="xj1">5999.5</td>
+        <td><button onclick="remo(this)">删除</button></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="c" onclick="number()"></td>
+        <td><img src="img/2.jpg" alt="" width="80" height="80">佳能EX-TR001</td>
+        <td>3888.5</td>
+        <td><input type="button" value="-" onclick="subfn2();"><input name='a2'type="text" value="1" style="width: 20px;text-align: center;" disabled><input  type="button" name='s' value="+" onclick="addfn2();"></td>
+        <td class="xj2">3888.5</td>
+        <td><button onclick="remo(this)">删除</button></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="c" onclick="number()"></td>
+        <td><img src="img/3.jpg" alt="" width="80" height="80">索尼EX-TR001</td>
+        <td>1428.5</td>
+        <td><input type="button" value="-" onclick="subfn3();"><input  name='a3' type="text" value="1" style="width: 20px;text-align: center;" disabled><input  type="button" name='s' value="+" onclick="addfn3();"></td>
+        <td class="xj3">1428.5</td>
+        <td><button onclick="remo(this)">删除</button></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="c" onclick="number()"></td>
+        <td><img src="img/4.jpg" alt="" width="80" height="80">富士EX-TR001</td>
+        <td>640.5</td>
+        <td><input type="button" value="-" onclick="subfn4();"><input name='a4'type="text" value="1" style="width: 20px;text-align: center;" disabled><input  type="button" name='s' value="+" onclick="addfn4();"></td>
+        <td class="xj4">640.5</td>
+        <td><button onclick="remo(this)">删除</button></td>
+    </tr>
+    <tr bgcolor="#dcdcdc">
+        <td colspan="5" style="text-align: left"><span ><input type="checkbox"name="c2" onclick="ch1();">全选</span >&nbsp&nbsp<span style="margin-right:400px ;cursor: pointer;" onclick="remo1();">删除</span>已选商品<span class="yx">0</span>件 &nbsp&nbsp合计:￥<span class="hj">0</span></td>
+        <td style="cursor: pointer" onclick="js();">结算</td>
+    </tr>
+</table>
+<script>
+    var tr1=document.getElementsByTagName('tr')[1]
+    tr1.onmouseover=function () {
+        tr1.style.backgroundColor = '#add8e6'
+    }
+    tr1.onmouseout = function () {
+        tr1.style.backgroundColor = '';
+    }
+    var tr2=document.getElementsByTagName('tr')[2]
+    tr2.onmouseover=function () {
+        tr2.style.backgroundColor = '#add8e6'
+    }
+    tr2.onmouseout = function () {
+        tr2.style.backgroundColor = '';
+    }
+    var tr3=document.getElementsByTagName('tr')[3]
+    tr3.onmouseover=function () {
+        tr3.style.backgroundColor = '#add8e6'
+    }
+    tr3.onmouseout = function () {
+        tr3.style.backgroundColor = '';
+    }
+    var tr4=document.getElementsByTagName('tr')[4]
+    tr4.onmouseover=function () {
+        tr4.style.backgroundColor = '#add8e6'
+    }
+    tr4.onmouseout = function () {
+        tr4.style.backgroundColor = '';
+    }
+
+    var checks = document.getElementsByName('c');
+    function ch() {
+        var a = document.getElementsByName('c1')[0];
+        if (a.checked) {
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = true;
+                number()
+            }
+        } else {
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = false;
+                number()
+            }
+        }
+    }
+    function ch1() {
+        var a = document.getElementsByName('c2')[0];
+        if (a.checked) {
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = true;
+                number()
+            }
+        } else {
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = false;
+                number()
+            }
+        }
+    }
+
+    function remo(obj) {
+		var tr = obj.parentNode.parentNode.parentNode;
+		tr.removeChild(obj.parentNode.parentNode)
+        number()
+	}
+    function addfn1() {
+        var input=document.getElementsByName('a1')[0]
+        var t=input.value
+        t++
+        input.value=t
+        xiaoji1()
+        number()
+    }
+    function addfn2() {
+        var input=document.getElementsByName('a2')[0]
+        var t=input.value
+        t++
+        input.value=t
+        xiaoji2()
+        number()
+    }
+    function addfn3() {
+        var input=document.getElementsByName('a3')[0]
+        var t=input.value
+        t++
+        input.value=t
+        xiaoji3()
+        number()
+    }
+    function addfn4() {
+        var input=document.getElementsByName('a4')[0]
+        var t=input.value
+        t++
+        input.value=t
+        xiaoji4()
+        number()
+    }
+    function subfn1() {
+        var input=document.getElementsByName('a1')[0]
+        var t=input.value
+        t--
+        if(t>=1){
+            input.value=t
+            xiaoji1()
+            number()
+        }
+    }
+     function subfn2() {
+        var input=document.getElementsByName('a2')[0]
+        var t=input.value
+        t--
+        if(t>=1){
+            input.value=t
+            xiaoji2()
+            number()
+        }
+    }
+     function subfn3() {
+        var input=document.getElementsByName('a3')[0]
+        var t=input.value
+        t--
+        if(t>=1){
+            input.value=t
+            xiaoji3()
+            number()
+        }
+    }
+     function subfn4() {
+        var input=document.getElementsByName('a4')[0]
+        var t=input.value
+        t--
+        if(t>=1){
+            input.value=t
+            xiaoji4()
+            number()
+        }
+    }
+    function remo1() {
+        if(confirm('你确定要全部删除么')){
+            for (var i = 0; i < checks.length; i++) {
+                if(checks[i].checked){
+                    var tr = checks[i].parentNode.parentNode.parentNode;
+		            tr.removeChild(checks[i].parentNode.parentNode)
+                    i--
+                }
+            }
+        number()
+        }
+    }
+    function xiaoji1() {
+        var n=document.getElementsByName('a1')[0]
+        var s=document.getElementsByClassName('xj1')[0]
+        s.innerHTML=Number(n.value)*5999.5
+    }
+    function xiaoji2() {
+        var n=document.getElementsByName('a2')[0]
+        var s=document.getElementsByClassName('xj2')[0]
+        s.innerHTML=Number(n.value)*3885.5
+    }
+    function xiaoji3() {
+        var n=document.getElementsByName('a3')[0]
+        var s=document.getElementsByClassName('xj3')[0]
+        s.innerHTML=Number(n.value)*1428.5
+    }
+    function xiaoji4() {
+        var n=document.getElementsByName('a4')[0]
+        var s=document.getElementsByClassName('xj4')[0]
+        s.innerHTML=Number(n.value)*640.5
+    }
+    function number() {
+        var n = 0
+        var c = document.getElementsByName('c')
+        for (var i = 0; i < c.length; i++) {
+            if (c[i].checked) {
+                var p=c[i].parentNode.parentNode.children[3].children[1]
+                n = n + Number(p.value)
+            }
+        }
+        var s = document.getElementsByClassName('yx')[0]
+                s.innerHTML = n
+        zj()
+    }
+    function zj() {
+
+        var n = 0
+        var c = document.getElementsByName('c')
+        for (var i = 0; i < c.length; i++) {
+            if (c[i].checked) {
+                var p=c[i].parentNode.parentNode.children[4].innerHTML
+                n = n + Number(p)
+            }
+        }
+        var s = document.getElementsByClassName('hj')[0]
+        s.innerHTML = n
+    }
+    function js() {
+        var s = document.getElementsByClassName('hj')[0]
+        if (s.innerHTML==0){
+            alert('没有商品，无法结算')
+            window.location.reload()
+        }else {
+                        if(confirm('总计'+s.innerHTML+'￥,确定要支付么？？？？？？？！！！！！')){
+            alert('支付成功！！！！！！！！')
+            window.location.reload()
+        }
+        }
+        // if(confirm('总计'+s.innerHTML+'￥,确定要支付么？？？？？？？！！！！！')){
+        //     alert('支付成功！！！！！！！！')
+        //     window.location.reload()
+        // }
+    }
+
+
+</script>
+</body>
+</html>

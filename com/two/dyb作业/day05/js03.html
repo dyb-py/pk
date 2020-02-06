@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击">
+<script>
+    /*
+    1.事件写在标签上，this必须通过参数传递
+    2.脚本书写方式，this直接在相应函数内部使用即可
+      */
+    var btn = document.getElementsByTagName('input')[0];
+    btn.onclick = function () {
+        console.log(this.value);
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

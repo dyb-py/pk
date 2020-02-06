@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+行数：<input type="text">
+列数：<input type="text">
+<input type="button" value="生成表格">
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //jq实现
+    //3行 4列表格
+    $(':button').click(function(){
+        var $row = $('input:eq(0)').val();
+        var $col = $('input:eq(1)').val();
+        //3行 4列表格
+        //创建 table
+        var $table = $('<table></table>');
+        $table.attr('border','1');
+        //创建tr
+        for (var i = 0; i < $row; i++) {
+            var $tr = $('<tr></tr>');
+            for (var j = 0; j < $col; j++) {
+                var $td = $('<td>宋建慧</td>');
+                //添加
+                $tr.append($td);
+            }
+            $table.append($tr);
+        }
+        $('body').append($table);
+
+
+    //补全  动态生成表格
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

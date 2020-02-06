@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>百知学员信息</h2>
+<form>
+    <table>
+        <tr>
+            <td align="right">姓名:</td>
+            <td ><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td align="right">性别:</td>
+            <td><input type="radio" name="sex" value="male">男<input type="radio" name="sex" value="female">女</td>
+        </tr>
+        <tr>
+            <td align="right">学校:</td>
+            <td ><input type="text" name="school"></td>
+        </tr>
+        <tr>
+            <td align="right">学历</td>
+            <td >
+                <select name="s" >
+                <option value="1" selected>大学</option>
+                <option value="2">高中</option>
+                <option value="3">小学</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td align="right">电话:</td>
+            <td ><input type="text" name="tel"></td>
+        </tr>
+        <tr>
+            <td align="right">qq:</td>
+            <td ><input type="text" name="qq"></td>
+        </tr>
+        <tr>
+            <td align="right">选修课程:</td>
+            <td >
+                <input type="checkbox" name="cur" value="linux">linux
+                <input type="checkbox" name="cur" value="mysql">mysql
+                <input type="checkbox" name="cur" value="python">python
+                <input type="checkbox" name="cur" value="html">html
+            </td>
+        </tr>
+        <tr>
+            <td align="right">自我评价:</td>
+            <td ><textarea name="t" id="t1" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center">
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+            <input type="button" value="添加数据" >
+            </td>
+        </tr>
+    </table>
+</form>>
+<script src="jquery-1.11.1.js"></script>
+<script>
+var data=[
+    {name:'dd',sex:'man',school:'太原理工',s:'小学',tel:'12345123',qq:'21211231',cur:['linux','python'],t:'啊awdwdwasasaadwadwad'},
+    {name:'aa',sex:'woman',school:'太原理工',s:'中学',tel:'1891231',qq:'2112321',cur:['python','mysql'],t:'啊达瓦大屋顶'},
+    {name:'cc',sex:'man',school:'太原理工',s:'大学',tel:'12123123',qq:'2112311',cur:['linux','html'],t:'lasjdlkjawdijpwajdpoawjpdojpowjdpoawjdwad'}
+]
+   $('[type=button]').click(function () {
+        var i=Math.floor(Math.random()*3);
+        $('[name="name"]').val(data[i]['name']);
+        if (data[i]['sex']=='man') {
+            $('[name="sex"]:eq(0)').prop('checked',true)
+        }else {
+            $('[name="sex"]:eq(1)').prop('checked',true)
+        }
+        $('[name="school"]').val(data[i]['school']);
+        if (data[i]['s']=='小学'){
+            $('[name="s"]').children()[2].selected=true
+        }
+        if (data[i]['s']=='中学'){
+            $('[name="s"]').children()[1].selected=true
+        }
+        if (data[i]['s']=='大学'){
+            $('[name="s"]').children()[0].selected=true
+        }
+        $('[name="tel"]').val(data[i]['tel']);
+        $('[name="qq"]').val(data[i]['qq']);
+        $('[name="t"]').text(data[i]['t']);
+        $('[name="cur"]').each(function (index,ele) {
+            for (var j=0;j<data[i]['cur'].length;j++) {
+                if (ele.value == data[i]['cur'][j]) {
+                    ele.checked = true;
+                    break
+                } else {
+                    ele.checked = false
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

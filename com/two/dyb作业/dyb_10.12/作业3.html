@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table{
+        width: 300px;
+        height: 40px;
+        border-collapse: collapse;
+        align-content: center;
+        border: 1px solid black;
+    }
+    td{
+        border: 1px solid black;
+        }
+</style>
+<body>
+<table>
+<tr>
+    <td align="center"><input type="checkbox" name="s" value="商品" onclick="ch();"></td>
+    <td align="center">商品名称</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="衣服"></td>
+    <td align="center">衣服</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="鞋子"></td>
+    <td align="center">鞋子</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="T恤"></td>
+    <td align="center">T恤</td>
+</tr>
+    <tr>
+    <td align="center"><input type="checkbox" name="s1" value="毛衣"></td>
+    <td align="center">毛衣</td>
+</tr>
+    <tr>
+        <td colspan="2" align="center"><button onclick="re();">反选</button></td>
+    </tr>
+</table>
+<script>
+    var t=document.getElementsByTagName('tr');
+    for(var i = 0; i < t.length; i++){
+        if (i%2==0){
+            t[i].style='background-color:green'
+        }else{
+            t[i].bgColor='yellow'
+        }
+    }
+    var checks = document.getElementsByName('s1');
+    function ch() {
+        var a = document.getElementsByName('s')[0];
+        if (a.checked) {
+            console.log('1');
+            for (var i = 0; i < checks.length; i++) {
+                console.log('11');
+                checks[i].checked = true;
+            }
+        } else {
+            for (var i = 0; i < checks.length; i++) {
+                console.log('22');
+                checks[i].checked = false;
+            }
+        }
+    }
+    function re() {
+        for (var i = 0; i < checks.length; i++) {
+
+            checks[i].checked = !checks[i].checked;
+        }
+        var a = document.getElementsByName('s')[0];
+        a.checked=false
+    }
+</script>
+</body>
+</html>

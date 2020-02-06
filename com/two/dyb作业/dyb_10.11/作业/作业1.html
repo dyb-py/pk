@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="开始抽奖" onclick="start()">
+<input type="button" value="结束抽奖" onclick="end()">
+<script>
+    function f1() {
+        var arr = ['小米','小红','小明','小东','小花'];
+    var r = Math.floor(Math.random()* 5);
+    console.log(arr[r]+'中奖了')
+    }
+    var a;
+    function start(){
+         a=setInterval(f1,100)
+    }
+    function f2() {
+        console.log('抽奖结束')
+    }
+    function end() {
+        f2()
+        clearInterval(a)
+    }
+</script>
+</body>
+</html>

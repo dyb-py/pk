@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h3>189班 班花</h3>
+<input type="checkbox" name="flowers" value="liuzong">刘总
+<input type="checkbox" name="flowers" value="panpan">盼盼
+<input type="checkbox" name="flowers" value="huihui">慧慧
+<input type="checkbox" name="flowers" value="qiqi">琦琦
+<input type="checkbox" name="flowers" value="xingxing">星星
+<input type="checkbox" name="flowers" value="xinxin">欣欣
+<br>
+<button onclick="allcheck();">全选</button>
+<button onclick="uncheck();">取消全选</button>
+<button onclick="revercheck();">反选</button>
+<script>
+    var checks = document.getElementsByName('flowers');
+    function allcheck() {
+        for (var i = 0; i < checks.length; i++) {
+            checks[i].checked = true;
+        }
+    }
+
+    function uncheck() {
+
+        for (var i = 0; i < checks.length; i++) {
+            checks[i].checked = false;
+        }
+    }
+
+    function revercheck() {
+
+        for (var i = 0; i < checks.length; i++) {
+
+            checks[i].checked = !checks[i].checked;
+        }
+    }
+    </script>
+</body>
+</html>

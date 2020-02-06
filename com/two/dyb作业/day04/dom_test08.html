@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="添加" onclick="fn()">
+<div>
+    我是div
+    <input type="button" value="删除" onclick="f1(this)">
+
+</div>
+<script>
+
+    function fn() {
+        var div = document.getElementsByTagName('div')[0];
+        div.style.display = 'block';
+    }
+
+    function f1(ele) {
+       // this 通过参数传递
+        console.log(ele);
+        document.body.removeChild(ele.parentNode);
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

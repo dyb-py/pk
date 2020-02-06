@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom-属性操作</title>
+</head>
+<body>
+<div>我是div</div>
+<form action="">
+    用户名： <input type="text" name="username"><br>
+    密码： <input type="password" name="userpwd"><br>
+    性别：
+    <input type="radio" name="sex"> 男
+    <input type="radio" name="sex" checked="checked"> 女
+    十一游玩：
+    <input type="checkbox" name="hobby">故宫博物院
+    <input type="checkbox" name="hobby">恭王府
+    <input type="checkbox" name="hobby">军博
+    <input type="checkbox" name="hobby">天安门
+    <input type="checkbox" name="hobby">颐和园
+    <input type="checkbox" name="hobby">北海公园
+    <input type="checkbox" name="hobby">动物园
+    <br>
+    
+    <input type="submit" value="登录" disabled="disabled">
+</form>
+<a href="dom01.html" class="aele ele a">点 贾强升</a>
+<img src="" alt="">
+<script>
+    /*
+    属性操作：
+        - id属性 class属性 所有标签都有
+        - form 表单元素  name属性 type value
+        - a  href
+        - img src
+     */
+    //1.设置div id属性 属性值div01
+    //获取
+    // var div01 = document.getElementsByTagName('div')[0];
+    // //设 id
+    // div01.id = 'div01';
+    // //访问
+    // console.log(div01.id);
+    //
+    // //class 属性  className
+    // div01.className = 'div1 div';
+
+
+    // 单选 多选 下拉列表
+    /*
+    单选多选  选中  checked
+    下拉列表 选中   selected
+    js中操作  true false
+     */
+    // var hobbys = document.getElementsByName('hobby');
+    // hobbys[1].checked = true;
+
+
+    /*
+    禁用 不可用
+    js中 disabled  属性值  true false
+     */
+    // var username = document.getElementsByName('username')[0];
+    // username.disabled = true;
+
+    //
+
+    // var btn = document.getElementsByTagName('input')[11];
+    // console.log(btn);
+    // btn.value = '注册';
+
+    // 表单中 涉及内容  操作 value属性
+
+    // var btn = document.getElementsByTagName('input')[0];
+    // btn.value = '请输入';
+
+
+    //非表单元素
+    //a div p span h table ul ol 内容
+    //innerHTML 文本+标签
+    var div = document.getElementsByTagName('div')[0];
+    console.log(div.innerHTML);
+    div.innerHTML = "刘总是充话费送的<input type='submit'>";
+
+
+
+</script>
+</body>
+</html>

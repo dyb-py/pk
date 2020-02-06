@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>我是给 requestapp 用的 index 模板文件</h1>
+<h1>欢迎您！ {{ name }}</h1>
+当前时间为 <span style="color: orangered">{{ time }}</span>
+<h1>如下为 列表： {{ list.0 }} {{ list.1 }} {{ list.2 }} {{ list.3 }} {{ list.4 }}</h1>
+<h1>如下为 字典： {{ dict.name }} {{ dict.age }} {{ dict.items }}</h1>
+{# model对象： model对象构成queryset，使用当前下标获取具体对象，对象访问属性#}
+<h1>如下为 model对象们： {{ users.0 }} {{ users.0.name }}</h1>
+
+<hr>
+
+{#模板标签#}
+
+{% if list.0 >= 18 and users.0.name == 'sunge' %}
+    <p>小伙砸还不错</p>
+{% else %}
+    <p>小姑凉很漂亮</p>
+{% endif %}
+
+{% if name not in 'sungeabcabc' %}
+    <p>不错，可以！</p>
+{% endif %}
+
+<hr>
+
+<h1>for标签 完成循环</h1>
+{#reversed 反向迭代 倒序#}
+{% for foo in list reversed%}
+    <p>{{ foo }} </p>
+{% endfor %}
+
+{#{% for foo in list1 %}#}
+{#    {% for f in foo %}#}
+{#        {{ f }},#}
+{#    {% endfor %}#}
+{#    <br>#}
+{#{% endfor %}#}
+{##}
+{#{% for f1,f2,f3 in list1 %}#}
+{#    {{ f1 }} {{ f2 }} {{ f3 }},#}
+{#{% endfor %}#}
+
+{#{% for foo in list %}#}
+{#    {{ forloop.counter0 }}#}
+{#    {{ forloop.revcounter }}#}
+{#    {{ forloop.revcounter0 }}#}
+{#    {{ forloop.last }}#}
+{#    <p>我是p标签</p>#}
+{#{% endfor %}#}
+
+{#综合#}
+{% for foo in list %}
+    {% if forloop.first %}
+        <div style="background-color:red;">我是div第一次循环 {{ foo }}</div>
+    {% else %}
+        <div>我是div {{ foo }}</div>
+    {% endif %}
+
+{% endfor %}
+
+{# 循环 for  if分支#}
+{# 传值  model对象所有数据传递#}
+{# 渲染在 表格中#}
+{# table tr td- 内容#}
+{#表格样式：边框 背景颜色 隔行变色 #}
+
+
+<hr>
+{#过滤器#}
+{#求模运算：返回值 布尔值#}
+<p>过滤器 求模运算： {{ users.1.age }} {{ users.1.age|divisibleby:2 }}</p>
+<p>过滤器 长度监听： {{ users }} {{ users|length}}</p>
+<p>过滤器 长度监听： {{ list }} {{ list|length}}</p>
+<p>过滤器 长度监听： {{ dict }} {{ dict|length}}</p>
+<p>过滤器 长度监听： {{ name }} {{ name|length}}</p>
+<p>过滤器 长度监听： {{ name }} {{ name|length_is:2}}</p>
+<p>过滤器 大小写操作： {{ users.0.name }} {{ users.0.name|lower}}</p>
+<p>过滤器 大小写操作： {{ users.0.name }} {{ users.0.name|upper}}</p>
+{#default: 如果变量未能成功接收到数据，则会显示 default#}
+{#<p>过滤器 default空值显示： {{ users.15 }} {{ users.15|default:'是否能显示呢？刘总也不知道'}}</p>#}
+<p>过滤器 default空值显示： {{ users.15 }} {{ users.15|default:'游客'}}</p>
+<p>过滤器 加减： {{ list.0 }} {{ list.0|add:10 }}</p>
+
+<p>过滤器 加减： {{ list.0 }} {{ list.0|add:-10 }}</p>
+<p>过滤器 乘除： {{ list.0 }} {% widthratio list.0 5 100 %}</p>
+<p>过滤器 乘除： {% widthratio 1 5 100 %}%</p>
+
+<p>过滤器 日期： {{ users.0.birthday }} {{ users.0.birthday|date:'Y/m/d' }}</p>
+
+
+</body>
+</html>

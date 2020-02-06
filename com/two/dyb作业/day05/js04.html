@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="js01.html">
+    用户名:<input type="text" name="username"><br>
+    密码：<input type="password" name="userpwd"><br>
+    <input type="submit" value="登录">
+</form>
+<script>
+    /*
+    1.提交表单事件 onsubmit,进行验证，两个框都不能为空，否则不允许提交
+    */
+    var form1 = document.forms[0];
+    form1.onsubmit = function (ev) {
+        alert(123);
+        //如果 两个框任意一个为空，不允许提交
+        var username = document.getElementsByName('username')[0];
+        var userpwd = document.getElementsByName('userpwd')[0];
+        if (username.value === '' || userpwd.value === '') {
+            //
+            alert('不允许为空');
+            //阻止默认行为 系统行为
+            //input submit按钮
+            ev.preventDefault();
+        }
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

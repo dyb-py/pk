@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .two {
+            border: 5px solid green;
+        }
+        .three {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //div 宽 高 背景
+    //css()
+    // $('div').css('width','100px');
+    // $('div').css('height','100px');
+    // $('div').css('background-color','red');
+    //css() 可以设置多个样式 键值对
+    // $('div').css({"width":'100px','height':'200px',"background-color":'red'});
+
+    //类名操作
+    //div one类名  two
+    // $('div').attr({"class" : 'one two'});
+    // $('div').attr("class",'one two');
+
+    //addClass() 添加类名
+    $('div').addClass('one');
+    //添加类名 空格隔开
+    $('div').addClass('two three');
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

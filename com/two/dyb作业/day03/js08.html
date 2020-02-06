@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-内置对象</title>
+</head>
+<body>
+<script>
+    //ceil 天花板 向上取整
+    // console.log(Math.ceil(-2.45));//-2
+    // //floor 地板 向下取整
+    // console.log(Math.floor(-2.45));//-3
+    // //round大约 四舍五入
+    // // console.log(Math.round(-2.7));//3
+    // // console.log(Math.round(-2.45));//-2
+    // // 随机数 0-1 小数
+    // console.log(Math.random());
+
+    //随机抽奖
+    //抽奖人名单
+    var arr = ['刘总','小琪琪','崔伟','建慧','何欣'];
+    //随机抽取某个人
+    //随机数 模拟下标  0 1 2 3 4
+    var randomindex = Math.floor(Math.random()* 5);
+    console.log(arr[randomindex]);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+</head>
+<body>
+<form action="{% url 'l_rapp:registerlogic' %}" method="post">
+    {% csrf_token %}
+    用户名：<input type="text" name="username" onblur="fn();"><span></span><br>
+    密码：<input type="password" name="userpwd"><br>
+    <input type="submit" value="注册">
+</form>
+<script>
+
+    //发送 post请求
+    function fn() {
+        //
+        var username = document.getElementsByName('username')[0];
+        //ajax请求
+        if (window.XMLHttpRequest) {
+            var xhr = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            var xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        //2.发送请求之前 配置 初始化工作
+        // post请求方式 发送参数 不拼接在url之后，单独发送send()
+        var url = '{% url "l_rapp:checkname" %}';
+        xhr.open('post',url,true);
+
+        //设置请求头 设置 csrf防御机制
+        xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        //3.发送请求
+        //send() 参数 携带数据  多个数据之间 &分隔
+        xhr.send('name='+username.value + '&age=18');
+        //4. 接收响应结果
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                //
+                console.log(xhr.responseText);
+            }
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    //发送请求 验证用户名是否存在？
+    //发送 get请求
+    function fn1() {
+        var username = document.getElementsByName('username')[0];
+        //发送请求给后端 连接数据库验证
+        {#window.location.href = '{% url "l_rapp:checkname" %}';#}
+{#        使用ajax技术#}
+        //1.创建 对象 xhr ajax 对象 标准浏览器 不识别ie5 /6
+        var xhr;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        //2.配置 参数
+        // 三个参数：请求方式 get/post 请求url  是否异步
+        //url 请求路径 后端  传参
+        // get请求方式 传参 拼接在url之后  username.value 用户名值
+        var url = '{% url "l_rapp:checkname" %}?name=' + username.value;
+        xhr.open('get',url,true);
+        //3.发送请求
+        xhr.send();
+        //4.接收响应结果
+        {#console.log(xhr.responseText);#}
+        // 回调函数
+        xhr.onreadystatechange = function() {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4 && xhr.status === 200) {
+            //接收结果
+                console.log(xhr.responseText);
+                {#if xhr.responseText === '1':#}
+                {#    document.getElementsByTagName('span')[0].innerHTML = '<img src="红叉">';#}
+                {#else if xhr.responseText === '0':#}
+                {#    document.getElementsByTagName('span')[0].innerHTML = '<img src="绿勾">';#}
+
+
+           }
+
+        }
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

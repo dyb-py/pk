@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="开始" onclick="start();">
+<input type="button" value="结束" onclick="stop();">
+<script>
+    /*
+    点击开始抽奖，不停在控制台输出随机名单
+    结束抽奖，停止抽奖
+     */
+    //
+    var timer = null;
+    var arr = ['小霖霖','刘总','小琪琪','小盼盼','小面包','小欣欣'];
+    var name;
+    function start() {
+        //定时器开启
+        timer = setInterval(function(){
+            //输出 随机名单
+
+            var index = Math.floor(Math.random()*arr.length);
+            name = arr[index];
+            console.log(arr[index]);
+        },100)
+    }
+
+
+    function stop() {
+        //弹框
+        alert(name + '班花一枚！');
+        clearInterval(timer);
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

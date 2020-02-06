@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="1">
+<input type="button" value="+" onclick="addfn();">
+<input type="button" name='s' value="-" onclick="subfn();">
+<script>
+    /*
+    需求：点击 +  数量框累加1
+     */
+    function addfn() {
+        //获取 数量框内value
+        var txt = document.getElementsByTagName('input')[0];
+        var val = txt.value;
+        console.log(typeof(val));//string
+        val++;
+        //val 给 txt 赋值
+        txt.value = val;
+    }
+    function subfn() {
+        var txt = document.getElementsByTagName('input')[0];
+        var val = txt.value; 
+        if (val>1){
+            val--;
+            txt.value=val;
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

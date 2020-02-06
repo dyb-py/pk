@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击1">
+<input type="button" value="点击2">
+<input type="button" value="点击3">
+<script src="jquery-1.11.1.js"></script>
+<script>
+    var bu=$('[type="button"]')
+    console.log(bu[0])
+    console.log(bu.get(1))
+    bu[0].onclick=function () {
+        alert('123')
+    }
+
+    var btn1 = document.getElementsByTagName('input')[2];
+    $(btn1).css('color','red')
+</script>
+</body>
+</html>

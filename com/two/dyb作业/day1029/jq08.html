@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq-遍历</title>
+</head>
+<body>
+<ul>
+    <li>我是li01</li>
+    <li>我是li02</li>
+    <li>我是li03</li>
+    <li>我是li04</li>
+    <li>我是li05</li>
+</ul>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //使用jq 给 li 设置 背景 红色
+    //对比原生js 实现 方式  所有li-伪数组 遍历 每个元素
+    //jq-隐式迭代
+    // $('li').css('background-color','red');
+
+    //获取li的内容
+    //html() text()
+    // console.log($('li').html());
+
+    //each() map()
+    // $('li').each(function(){
+    //     //this 事件响应函数中使用
+    //     //this 对象中出现 当前对象
+    //     //this 代指 当前每个元素
+    //     // console.log(this);//dom对象
+    //     console.log($(this).html());
+    // });
+
+
+    $('li').each(function(index,ele){
+        //
+        console.log(index,ele);
+        console.log($(ele).html());
+    });
+
+    //
+    // var arrColor = ['red','green','yellow','blue','pink'];
+    // //
+    // $('li').each(function(index,ele){
+    //     $(ele).css('background-color',arrColor[index]);
+    // });
+
+
+</script>
+</body>
+</html>

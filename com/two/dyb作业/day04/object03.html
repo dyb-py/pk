@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-对象</title>
+</head>
+<body>
+<script>
+    /*
+    js对象：
+        - 简单对象 直接创建
+        - 构造方法
+     */
+    // 刘总
+    // var Mr_Liu = {
+    //     name : '刘海涵',
+    //     age : 18,
+    //     chifan : function () {
+    //         console.log('吃宫保鸡丁');
+    //     },
+    //     sleeping : function() {
+    //         //this
+    //         console.log(this.name + '睡觉');
+    //     }
+    // };
+    //访问
+    // console.log(Mr_Liu.name);
+    // Mr_Liu.chifan();
+    // Mr_Liu.sleeping();
+
+    //没有类
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+        this.sleeping = function(){
+            console.log(this.name + '在睡觉');
+        }
+    }
+
+    //创建对象
+    var person1 = new Person('刘总',18);
+    //访问
+    person1.sleeping();
+
+    //
+    // new Array()
+    // new Date()
+
+</script>
+</body>
+</html>

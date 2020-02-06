@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第二页</title>
+</head>
+<body>
+<input type="button" value="跳转" onclick="jump();">
+<input type="button" value="上一页" onclick="prev_page();">
+<input type="button" value="下一页" onclick="next_page();">
+<script>
+    //
+    function jump() {
+        //
+        window.location.href = 'third.html';
+    }
+
+     //上一页
+    function prev_page() {
+        //back()
+        window.history.back();
+    }
+
+
+
+    function next_page() {
+        //forward 向前
+        window.history.forward();
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

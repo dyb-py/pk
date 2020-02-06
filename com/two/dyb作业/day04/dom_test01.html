@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="开始" onclick="fn();">
+<script>
+    /*
+    点击按钮 切换 按钮上的内容
+     */
+    function fn () {
+        var btn = document.getElementsByTagName('input')[0];
+        // if (btn.value === '开始') {
+        //     btn.value = '停止';
+        // } else {
+        //     btn.value = '开始';
+        // }
+        btn.value = btn.value === '开始' ? '停止' : '开始';
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

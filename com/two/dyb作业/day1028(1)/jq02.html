@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li id="li01">我是li01</li>
+    <li class="li" id="li02">我是li02</li>
+    <li>我是li03</li>
+    <li class="li">我是li04
+        <ol>
+            <li>我是下级li01</li>
+            <li>我是下级li02</li>
+            <li>我是下级li03</li>
+        </ol>
+    </li>
+    <li>我是li05</li>
+</ul>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+    //入口函数
+    $(function(){
+        //基本选择器
+        //id选择器 类选择器 标签选择器
+        // console.log($('#li01'));
+        // console.log(document.getElementById('li01'));
+
+        // $('#li01').css('color','red');
+        // $('.li').css('color','red');
+        //原生js document.getElementsByTagName('li') 伪数组
+        //所有li 设置字体颜色为红色
+        //数组 遍历 每个元素-标签.style.color = 'red'
+        // $('li').css('color','red');
+
+        // 交集 并集,
+        // $('.li,#li01').css('color','red');
+
+
+        //层级
+        // 后代选择器   find()
+        //子代选择器    children()
+        //父选择器 parent()
+        //next()
+        //prev()
+
+        // $('#li02').next().css('color','red');
+        // $('#li02').prev().css('color','red');
+        // $('#li02').parent().css('border-width','1px');
+        // $('#li02').parent().css('border-style','solid');
+        // $('#li02').parent().css('border-color','red');
+        // $('#li02').parent().css('border','1px solid green');
+
+        //后代
+        // $('ul li').css('border','1px solid red');
+        // $('ul').find('li').css('border','1px solid green');\
+        //子代 儿子
+        // $('ul > li').css('border','1px solid green');
+        // $('ul').children('.li').css('border','1px solid green');
+
+
+
+
+
+    });
+</script>
+</body>
+</html>

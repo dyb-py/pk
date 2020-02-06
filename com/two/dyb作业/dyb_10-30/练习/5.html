@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="点击">
+</div>
+<script src="jquery-1.11.1.js"></script>
+<script>
+$('input').click(function(ev){
+        console.log(ev);//事件对象
+        alert('input');
+        ev.stopPropagation();//jq 阻止冒泡
+    });
+
+    $('div').click(function(ev){
+        console.log(ev);//事件对象
+        alert('div');
+
+    });
+</script>
+</body>
+</html>

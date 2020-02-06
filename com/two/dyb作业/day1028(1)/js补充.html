@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩充知识</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>刘总1</td>
+        <td>买衣服</td>
+        <td>2000元</td>
+        <td><input type="checkbox" name="hobbys" value="买衣服"></td>
+    </tr>
+    <tr>
+        <td>刘总2</td>
+        <td>买衣服</td>
+        <td>2000元</td>
+        <td><input type="checkbox" name="hobbys" value="买衣服"></td>
+    </tr>
+    <tr>
+        <td>刘总3</td>
+        <td>买衣服</td>
+        <td>2000元</td>
+        <td><input type="checkbox" name="hobbys" value="买衣服"></td>
+    </tr>
+    <tr>
+        <td>刘总4</td>
+        <td>买衣服</td>
+        <td>2000元</td>
+        <td><input type="checkbox" name="hobbys" value="买衣服"></td>
+    </tr>
+</table>
+
+<button>选择删除</button>
+<script>
+
+    var hobbys = document.getElementsByName('hobbys');
+
+    var btn = document.getElementsByTagName('button')[0];
+    var table = document.getElementsByTagName('tbody')[0];
+    console.log(table);
+
+    btn.onclick = function () {
+        for (var i = 0; i < hobbys.length; i++) {
+            if (hobbys[i].checked) {
+                table.removeChild(hobbys[i].parentNode.parentNode);
+                i--;
+            }
+        }
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
